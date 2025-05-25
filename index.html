@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный Город Будущего: Роль ИИ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+    <video autoplay loop muted playsinline class="fixed inset-0 w-full h-full object-cover z-[-10] opacity-20">
+        <source src="https://i.imgur.com/YTKXFRq.mp4" type="video/mp4">
+        Ваш браузер не поддерживает тег video.
+    </video>
+
+    <header class="sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a href="#" data-page="home" class="text-xl lg:text-2xl font-bold page-link flex-shrink-0">
+                <i class="fas fa-city mr-1 lg:mr-2"></i>Умный Город <span id="header-subtitle" class="text-slate-400 text-lg lg:text-xl">| ИИ</span>
+            </a>
+            <div class="flex items-center">
+                 <div class="hidden md:flex items-center space-x-3 lg:space-x-4 mr-3 lg:mr-4 text-sm">
+                    <a href="#" data-page="ai-basics" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">Основы ИИ</a>
+                    <a href="#" data-page="intro" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">Что это?</a>
+                    <a href="#" data-page="ai-role" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">Роль ИИ</a>
+                    <a href="#" data-page="examples" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">Примеры</a>
+                    <a href="#" data-page="cities-reality-fantasy" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">Города</a>
+                    <a href="#" data-page="faq" class="page-link page-link-navitem nav-link-hover-bg px-2 py-1 rounded">ЧаВо</a>
+                </div>
+                <button id="theme-switcher" title="Сменить тему">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-2xl ml-3">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+             <div class="mobile-menu-bg-color px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" data-page="home" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Главная</a>
+                <a href="#" data-page="ai-basics" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Основы ИИ</a>
+                <a href="#" data-page="intro" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Что такое Умный Город?</a>
+                <a href="#" data-page="ai-role" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Роль ИИ</a>
+                <a href="#" data-page="buildings" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умные Здания</a>
+                <a href="#" data-page="data" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Данные в Городе</a>
+                <a href="#" data-page="gov" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умное Правительство</a>
+                <a href="#" data-page="transport" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умный Транспорт</a>
+                <a href="#" data-page="energy" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умная Энергетика</a>
+                <a href="#" data-page="ecology" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умная Экология</a>
+                <a href="#" data-page="healthcare" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Умное Здравоохранение</a>
+                <a href="#" data-page="examples" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Примеры ИИ</a>
+                <a href="#" data-page="cities-reality-fantasy" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Города: Реальность и Фантазия</a>
+                <a href="#" data-page="ethics" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Этика и Безопасность</a>
+                <a href="#" data-page="your-role" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Твоя роль</a>
+                <a href="#" data-page="faq" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">ЧаВо</a>
+                <a href="#" data-page="authors" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Авторы</a>
+                <a href="#" data-page="glossary" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Словарь</a>
+                <a href="#" data-page="quiz" class="block py-2 px-4 text-sm page-link hover:bg-opacity-75 rounded-md">Тест</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10"> <section id="page-home" class="page active">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    <span class="block">Умный Город Будущего:</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-sky-400 to-indigo-400" id="home-subtitle-gradient">Как ИИ Меняет Наши Города?</span>
+                </h1>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto home-page-text">
+                    Привет! Этот проект — твой гид в мир умных городов и искусственного интеллекта. Узнай, как технологии делают жизнь удобнее, безопаснее и экологичнее.
+                </p>
+                <button data-page="ai-basics" class="btn page-link mt-6 text-lg">Начать изучение!</button>
+            </div>
+
+            <h2 class="text-3xl font-bold text-center mb-8 home-page-text">Главные Разделы</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <a href="#" data-page="ai-basics" class="page-link nav-card main-nav-card rounded-top-card">
+                    <div> <div class="icon"><i class="fas fa-microchip"></i></div> <h3 class="text-xl mb-2">Основы ИИ</h3> <p class="text-sm">Что такое ИИ и как он "учится"? Разбираемся в видах обучения.</p> </div>
+                    <span class="mt-4 text-sm font-semibold learn-more-link">Погрузиться в ИИ &rarr;</span>
+                </a>
+                <a href="#" data-page="intro" class="page-link nav-card main-nav-card"> <div> <div class="icon"><i class="fas fa-city"></i></div> <h3 class="text-xl mb-2">Что такое Умный Город?</h3> <p class="text-sm">Разберемся в основах: из чего состоит умный город и зачем он нужен.</p> </div>
+                    <span class="mt-4 text-sm font-semibold learn-more-link">Узнать больше &rarr;</span>
+                </a>
+                 <a href="#" data-page="ai-role" class="page-link nav-card main-nav-card">
+                    <div> <div class="icon"><i class="fas fa-brain"></i></div> <h3 class="text-xl mb-2">Роль ИИ</h3> <p class="text-sm">ИИ — мозг умного города. Узнай, какие задачи он решает.</p> </div>
+                    <span class="mt-4 text-sm font-semibold learn-more-link">Исследовать &rarr;</span>
+                </a>
+                <a href="#" data-page="buildings" class="page-link nav-card main-nav-card"> <div> <div class="icon"><i class="fas fa-building-user"></i></div> <h3 class="text-xl mb-2">Умные Здания и Инфраструктура</h3> <p class="text-sm">Как ИИ делает наши дома и городскую среду эффективнее.</p> </div>
+                    <span class="mt-4 text-sm font-semibold learn-more-link">Изучить &rarr;</span>
+                </a>
+                <a href="#" data-page="data" class="page-link nav-card main-nav-card"> <div> <div class="icon"><i class="fas fa-database"></i></div> <h3 class="text-xl mb-2">Данные: Топливо Города</h3> <p class="text-sm">О сборе, анализе данных и их значении для умного города.</p> </div>
+                    <span class="mt-4 text-sm font-semibold learn-more-link">Узнать о данных &rarr;</span>
+                </a>
+                 <a href="#" data-page="examples" class="page-link nav-card main-nav-card"> <div> <div class="icon"><i class="fas fa-lightbulb"></i></div> <h3 class="text-xl mb-2">Примеры ИИ</h3> <p class="text-sm">Разнообразные кейсы применения ИИ в городской жизни.</p> </div>
+                     <span class="mt-4 text-sm font-semibold learn-more-link">Смотреть &rarr;</span>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <a href="#" data-page="quiz" class="page-link nav-card main-nav-card quiz-home-card md:col-span-2">
+                    <div class="flex flex-col items-center justify-center h-full text-center">
+                        <div class="icon text-4xl"><i class="fas fa-question-circle"></i></div>
+                        <h3 class="text-2xl mb-2">Проверь Себя!</h3>
+                        <p class="text-sm">Пройди увлекательный тест и узнай, насколько хорошо ты разбираешься в теме.</p>
+                    </div>
+                </a>
+                 <a href="#" data-page="your-role" class="page-link nav-card main-nav-card">
+                    <div> <div class="icon"><i class="fas fa-user-graduate"></i></div> <h3 class="text-xl mb-2">Твоя Роль</h3> <p class="text-sm">Как ты можешь повлиять на города будущего.</p> </div>
+                     <span class="mt-4 text-sm font-semibold learn-more-link">Участвовать &rarr;</span>
+                </a>
+            </div>
+
+            <h2 class="text-2xl font-bold text-center mb-6 home-page-text">Дополнительно</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="#" data-page="gov" class="page-link nav-card secondary-nav-card"> <div><div class="icon text-sm"><i class="fas fa-landmark-dome"></i></div><h3 class="text-lg mb-1">Умное Правительство</h3><p class="text-xs">ИИ в госуправлении.</p></div>
+                </a>
+                <a href="#" data-page="transport" class="page-link nav-card secondary-nav-card"> <div><div class="icon text-sm"><i class="fas fa-car-side"></i></div><h3 class="text-lg mb-1">Умный Транспорт</h3><p class="text-xs">Оптимизация движения.</p></div>
+                </a>
+                <a href="#" data-page="energy" class="page-link nav-card secondary-nav-card"> <div><div class="icon text-sm"><i class="fas fa-bolt"></i></div><h3 class="text-lg mb-1">Умная Энергетика</h3><p class="text-xs">Эффективность и экология.</p></div>
+                </a>
+                 <a href="#" data-page="ecology" class="page-link nav-card secondary-nav-card">
+                    <div><div class="icon text-sm"><i class="fas fa-leaf"></i></div><h3 class="text-lg mb-1">Умная Экология</h3><p class="text-xs">ИИ на страже природы.</p></div>
+                </a>
+                <a href="#" data-page="healthcare" class="page-link nav-card secondary-nav-card">
+                    <div><div class="icon text-sm"><i class="fas fa-briefcase-medical"></i></div><h3 class="text-lg mb-1">Умное Здравоохранение</h3><p class="text-xs">Технологии для здоровья.</p></div>
+                </a>
+                <a href="#" data-page="cities-reality-fantasy" class="page-link nav-card secondary-nav-card">
+                    <div><div class="icon text-sm"><i class="fas fa-map-signs"></i></div><h3 class="text-lg mb-1">Города</h3><p class="text-xs">Реальность и Фантазия.</p></div>
+                </a>
+                <a href="#" data-page="ethics" class="page-link nav-card secondary-nav-card">
+                    <div><div class="icon text-sm"><i class="fas fa-user-shield"></i></div><h3 class="text-lg mb-1">Этика</h3><p class="text-xs">Важные вопросы.</p></div>
+                </a>
+                <a href="#" data-page="faq" class="page-link nav-card secondary-nav-card">
+                    <div><div class="icon text-sm"><i class="fas fa-question"></i></div><h3 class="text-lg mb-1">ЧаВо</h3><p class="text-xs">Ответы на вопросы.</p></div>
+                </a>
+                <a href="#" data-page="glossary" class="page-link nav-card secondary-nav-card"> <div><div class="icon text-sm"><i class="fas fa-book"></i></div><h3 class="text-lg mb-1">Словарь</h3><p class="text-xs">Ключевые термины.</p></div>
+                </a>
+                 <a href="#" data-page="authors" class="page-link nav-card secondary-nav-card"> <div><div class="icon text-sm"><i class="fas fa-users-cog"></i></div><h3 class="text-lg mb-1">Авторы</h3><p class="text-xs">Команда проекта.</p></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="page-ai-basics" class="page">
+            <h2 class="section-title">Основы ИИ и Виды Обучения <i class="fas fa-graduation-cap"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Привет, будущий исследователь умных городов! Прежде чем мы погрузимся в то, как ИИ меняет наши города, давай разберемся в самых азах. Что же такое этот загадочный Искусственный Интеллект и как он умудряется "учиться"? Готов? Поехали!</p>
+            <div class="content-block">
+                <h3 class="sub-section-title"><i class="fas fa-microchip mr-2"></i>Что такое ИИ? (Очень просто)</h3>
+                <p class="mb-3"><strong>Искусственный Интеллект</strong> — это как бы "ум" для компьютеров. Это способность машин выполнять задачи, которые обычно требуют человеческого разума: понимать язык, распознавать картинки, принимать решения и учиться на опыте.</p>
+                <p>ИИ не всегда выглядит как говорящий робот из фильмов. Часто это сложные программы и алгоритмы, работающие "за кулисами".</p>
+            </div>
+
+            <h3 class="sub-section-title">Как ИИ Учится? Основные Виды Машинного Обучения:</h3>
+            <p class="mb-4 page-text-secondary">Машинное обучение (Machine Learning, ML) — это одна из важнейших областей ИИ. Именно благодаря ML компьютеры могут учиться на данных. Вот три главных "стиля" обучения:</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="content-block ai-learning-card">
+                    <div class="text-center mb-3"><i class="fas fa-chalkboard-teacher text-4xl icon-color"></i></div>
+                    <h4 class="font-bold text-xl mb-2 text-center card-text-primary">1. Обучение с Учителем (Supervised Learning)</h4>
+                    <p class="text-sm page-text-muted mb-2"><strong>Аналогия:</strong> Представь, что ты учишься различать яблоки и бананы. Тебе показывают много картинок: "Это яблоко", "Это банан", "Это снова яблоко".</p>
+                    <p class="text-sm page-text-muted"><strong>Как работает:</strong> ИИ дают данные, где уже есть "правильные ответы" (метки). Например, фотографии кошек с подписью "кошка" и собак с подписью "собака". ИИ учится находить закономерности, чтобы потом самостоятельно определять, кто на новой картинке.</p>
+                    <p class="text-sm page-text-muted mt-2"><strong>Примеры в городе:</strong> Распознавание номеров машин, предсказание пробок на основе прошлых данных.</p>
+                </div>
+
+                <div class="content-block ai-learning-card">
+                    <div class="text-center mb-3"><i class="fas fa-search text-4xl icon-color"></i></div>
+                    <h4 class="font-bold text-xl mb-2 text-center card-text-primary">2. Обучение без Учителя (Unsupervised Learning)</h4>
+                    <p class="text-sm page-text-muted mb-2"><strong>Аналогия:</strong> Тебе дали кучу разных фруктов и попросили рассортировать их по группам, не говоря, какие это фрукты. Ты сам ищешь похожие по цвету, форме, размеру.</p>
+                    <p class="text-sm page-text-muted"><strong>Как работает:</strong> ИИ получает данные без "правильных ответов". Его задача — самостоятельно найти в них скрытые структуры, закономерности или сгруппировать похожие объекты (кластеризация).</p>
+                    <p class="text-sm page-text-muted mt-2"><strong>Примеры в городе:</strong> Сегментация жителей по интересам для персонализации услуг, выявление аномального поведения в транспортных потоках.</p>
+                </div>
+
+                <div class="content-block ai-learning-card">
+                    <div class="text-center mb-3"><i class="fas fa-award text-4xl icon-color"></i></div>
+                    <h4 class="font-bold text-xl mb-2 text-center card-text-primary">3. Обучение с Подкреплением (Reinforcement Learning)</h4>
+                    <p class="text-sm page-text-muted mb-2"><strong>Аналогия:</strong> Ты учишься играть в видеоигру. За правильные действия получаешь очки (награду), за неправильные — теряешь жизнь (штраф). Постепенно ты понимаешь, как играть лучше, чтобы набрать больше очков.</p>
+                    <p class="text-sm page-text-muted"><strong>Как работает:</strong> ИИ (агент) действует в некой среде, совершает действия и получает "награды" или "штрафы" за них. Цель — научиться выбирать такие действия, которые максимизируют итоговую награду.</p>
+                    <p class="text-sm page-text-muted mt-2"><strong>Примеры в городе:</strong> Оптимизация работы светофоров в реальном времени для минимизации заторов, управление энергопотреблением зданий.</p>
+                </div>
+            </div>
+            
+            <div class="reflection-prompt">
+                <h4><i class="fas fa-comment-dots mr-2"></i>Твои мысли:</h4>
+                <p>Какой из видов обучения ИИ кажется тебе наиболее перспективным для решения проблем твоего города? Почему?</p>
+                <textarea placeholder="Напиши свои мысли здесь..."></textarea>
+                <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-intro" class="page">
+            <h2 class="section-title">Что такое Умный Город?</h2>
+            <p class="text-lg mb-6 page-text-secondary">Представь город, где всё работает как часы, удобно для жителей и бережно к природе. Это и есть умный город! Давай вместе разберемся, что это за чудо такое.</p>
+            <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div class="content-block">
+                    <h3 class="sub-section-title">Простыми словами...</h3>
+                    <p class="mb-4"><strong>Умный город (Smart City)</strong> — это город, который использует информационные и коммуникационные технологии (ИКТ), включая ИИ, чтобы улучшить качество жизни своих граждан, повысить эффективность городских служб и обеспечить устойчивое развитие.</p>
+                    <p>Думай об этом как о городе с "цифровым мозгом", который помогает ему лучше функционировать.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение современного города с линиями данных]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-96">
+            </div>
+            <h3 class="sub-section-title mt-8">Ключевые характеристики Умного Города:</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="content-block text-center"><i class="fas fa-wifi text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Связанность</h4><p class="text-sm">Все системы и устройства обмениваются данными.</p></div>
+                <div class="content-block text-center"><i class="fas fa-leaf text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Устойчивость</h4><p class="text-sm">Экологичность и забота о ресурсах.</p></div>
+                <div class="content-block text-center"><i class="fas fa-cogs text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Эффективность</h4><p class="text-sm">Оптимизация работы городских служб.</p></div>
+                <div class="content-block text-center"><i class="fas fa-users text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Ориентация на жителя</h4><p class="text-sm">Комфорт и безопасность для всех.</p></div>
+            </div>
+            <h3 class="sub-section-title">Компоненты Умного Города</h3>
+            <p class="page-text-muted mb-6">Умный город состоит из множества взаимосвязанных элементов. Представь себе сложную систему, где каждый компонент играет свою роль, а ИИ помогает им работать слаженно.</p>
+            <div class="reflection-prompt">
+                 <h4><i class="fas fa-lightbulb mr-2"></i>Подумай об этом!</h4>
+                 <p class="page-text-primary">Какие проблемы твоего города или района мог бы решить "умный" подход? Запиши 2-3 идеи.</p>
+                 <textarea placeholder="Мои идеи..."></textarea>
+                 <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                 <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-ai-role" class="page">
+            <h2 class="section-title">Роль ИИ в Умном Городе</h2>
+            <p class="text-lg mb-6 page-text-secondary">Если умный город — это сложный организм, то Искусственный Интеллект (ИИ) — это его мозг и нервная система, которые координируют все процессы. Давай посмотрим, как именно ИИ помогает городам становиться "умнее".</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div class="content-block">
+                    <h3 class="sub-section-title">ИИ — двигатель прогресса</h3>
+                    <p class="mb-3">ИИ позволяет не просто собирать данные (этим занимаются датчики и IoT - Интернет вещей), а АНАЛИЗИРОВАТЬ их, находить закономерности, делать ПРОГНОЗЫ и принимать ОПТИМАЛЬНЫЕ решения.</p>
+                    <ul class="list-disc list-inside space-y-1"><li class="page-text-muted"><strong>Анализ данных:</strong> обработка огромных объемов информации от датчиков, камер, граждан.</li><li class="page-text-muted"><strong>Предсказание:</strong> например, пробок на дорогах, потребления энергии, вероятности происшествий.</li><li class="page-text-muted"><strong>Автоматизация:</strong> управление светофорами, системами освещения, распределением ресурсов.</li><li class="page-text-muted"><strong>Оптимизация:</strong> улучшение маршрутов общественного транспорта, работы коммунальных служб.</li><li class="page-text-muted"><strong>Персонализация:</strong> адаптация услуг под нужды конкретных жителей.</li></ul>
+                </div>
+                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение абстрактной нейронной сети или светящегося мозга]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px]">
+            </div>
+            <h3 class="sub-section-title">ИИ как "мозг" города</h3>
+            <p class="page-text-muted mb-6">Представь, что данные от всех городских систем (транспорт, энергетика, ЖКХ и т.д.) стекаются в единый центр, где ИИ их обрабатывает. На основе этого анализа ИИ помогает принимать решения для улучшения жизни в городе.</p>
+            <div class="mt-8 p-6 rounded-lg accent-block-bg border accent-block-border">
+                <h4 class="text-xl font-semibold accent-block-text mb-2"><i class="fas fa-code-branch mr-2"></i>Ключевые технологии ИИ для города:</h4>
+                <ul class="list-none space-y-2"><li class="flex items-start"><i class="fas fa-check-circle icon-color mt-1 mr-2"></i><div class="page-text-primary"><strong>Машинное обучение (Machine Learning):</strong> Обучение систем на данных для выполнения задач без явного программирования.</div></li><li class="flex items-start"><i class="fas fa-check-circle icon-color mt-1 mr-2"></i><div class="page-text-primary"><strong>Компьютерное зрение (Computer Vision):</strong> Анализ изображений и видео (например, для контроля трафика или безопасности).</div></li><li class="flex items-start"><i class="fas fa-check-circle icon-color mt-1 mr-2"></i><div class="page-text-primary"><strong>Обработка естественного языка (NLP):</strong> Понимание и генерация человеческой речи (для чат-ботов, анализа обращений граждан).</div></li></ul>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-buildings" class="page">
+            <h2 class="section-title">Умные Здания и Инфраструктура <i class="fas fa-city"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Привет! В этом разделе мы заглянем внутрь "умных" домов и посмотрим, как ИИ делает не только наши квартиры, но и всю городскую инфраструктуру – дороги, мосты, сети – более эффективной и отзывчивой.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div class="content-block">
+                    <h3 class="sub-section-title">"Умные" кирпичи и провода:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Энергоэффективность зданий:</strong> ИИ управляет отоплением, вентиляцией, кондиционированием (HVAC) и освещением, основываясь на присутствии людей, времени суток и погоде, значительно снижая потребление энергии.</li>
+                        <li class="page-text-muted"><strong>Автоматизация и комфорт:</strong> Умные дома реагируют на голосовые команды, автоматически открывают шторы, включают музыку или регулируют температуру.</li>
+                        <li class="page-text-muted"><strong>Безопасность зданий:</strong> ИИ в системах видеонаблюдения распознает несанкционированный доступ, дым или другие угрозы, мгновенно оповещая службы. Умные замки и системы контроля доступа.</li>
+                        <li class="page-text-muted"><strong>Предиктивное обслуживание инфраструктуры:</strong> Датчики на мостах, дорогах, в трубах собирают данные о состоянии. ИИ анализирует их, предсказывая возможные поломки и необходимость ремонта до того, как случится авария.</li>
+                        <li class="page-text-muted"><strong>Оптимизация использования пространства:</strong> В офисах ИИ может анализировать загруженность рабочих мест и переговорных, помогая эффективно использовать пространство.</li>
+                    </ul>
+                </div>
+                 <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение современного интерьера с элементами умного дома или моста с датчиками]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px]">
+            </div>
+
+            <h3 class="sub-section-title">Пример: Умный офис</h3>
+            <div class="content-block">
+                <p class="page-text-muted">Представь офис, где свет включается только там, где есть люди, температура автоматически подстраивается под количество сотрудников в помещении, а система бронирования переговорных комнат предлагает оптимальное время и место на основе анализа календарей участников. ИИ также может следить за качеством воздуха и напоминать о необходимости проветривания.</p>
+            </div>
+             <h3 class="sub-section-title">Компоненты Умного Здания</h3>
+             <p class="page-text-muted mb-6">Умное здание – это сложная система, где датчики (температуры, света, движения, присутствия), исполнительные механизмы (управление отоплением, освещением, замками) и ИИ-контроллер работают вместе для создания комфортной, безопасной и энергоэффективной среды.</p>
+            <div class="reflection-prompt">
+                <h4><i class="fas fa-home-user mr-2"></i>Твой умный дом/район:</h4>
+                <p>Если бы ты мог добавить одну "умную" функцию в свое здание (дом, школу) или районную инфраструктуру (дороги, парки), что бы это было и почему?</p>
+                <textarea placeholder="Моя идея для умного здания/района..."></textarea>
+                <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-data" class="page">
+            <h2 class="section-title">Данные: Топливо Умного Города <i class="fas fa-database"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Говорят, кто владеет информацией – владеет миром. В умном городе информация, или данные, – это действительно ключевой ресурс, своего рода топливо, на котором работают все "умные" системы. Давай разберемся, откуда они берутся и что с ними происходит.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                 <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение абстрактных потоков данных или дата-центра]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px] order-last md:order-first">
+                <div class="content-block">
+                    <h3 class="sub-section-title">Откуда берутся данные?</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Интернет Вещей (IoT):</strong> Миллионы датчиков, встроенных в светофоры, мусорные баки, системы освещения, транспорт, здания, собирают информацию о температуре, движении, заполнении, потреблении ресурсов и т.д.</li>
+                        <li class="page-text-muted"><strong>Камеры видеонаблюдения:</strong> Анализируют транспортные потоки, общественную безопасность, поведение людей (с соблюдением приватности).</li>
+                        <li class="page-text-muted"><strong>Мобильные устройства граждан:</strong> Анонимизированные данные о перемещениях могут помочь в планировании транспортных маршрутов.</li>
+                        <li class="page-text-muted"><strong>Городские службы:</strong> Данные о работе коммунальных служб, обращениях граждан, потреблении воды и энергии.</li>
+                        <li class="page-text-muted"><strong>Открытые данные (Open Data):</strong> Правительственные и муниципальные данные, доступные для использования разработчиками и исследователями для создания новых полезных сервисов.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title">Что ИИ делает с данными?</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="content-block"><i class="fas fa-magnifying-glass-chart mr-2 icon-color"></i><strong>Анализ и выявление закономерностей:</strong> Находить скрытые связи и тренды в огромных массивах информации (Big Data).</div>
+                <div class="content-block"><i class="fas fa-bullseye mr-2 icon-color"></i><strong>Прогнозирование:</strong> Предсказывать будущие события (например, пробки, спрос на энергию, вероятность ЧС).</div>
+                <div class="content-block"><i class="fas fa-gears mr-2 icon-color"></i><strong>Оптимизация:</strong> Находить наилучшие решения для управления городскими системами.</div>
+                <div class="content-block"><i class="fas fa-user-pen mr-2 icon-color"></i><strong>Персонализация:</strong> Предоставлять жителям услуги и информацию, соответствующие их индивидуальным потребностям.</div>
+            </div>
+            
+             <h3 class="sub-section-title">Жизненный Цикл Данных в Умном Городе</h3>
+             <p class="page-text-muted mb-6">Данные в умном городе проходят несколько этапов: сбор с помощью датчиков и камер, передача по сетям, хранение на серверах или в облаке, анализ с помощью ИИ, на основе которого принимаются решения и совершаются действия. Этот процесс цикличен, так как действия генерируют новые данные и обратную связь.</p>
+            <div class="ethical-dilemma">
+                <h4><i class="fas fa-shield-halved mr-2"></i>Этическая Задачка: Открытые данные vs Приватность</h4>
+                <p>Городские власти решают опубликовать анонимизированные данные о перемещениях жителей (собранные с общественного транспорта и мобильных приложений) для того, чтобы стартапы и исследователи могли разработать новые полезные сервисы (например, для улучшения транспортной системы или планирования новых магазинов). Однако, даже анонимизированные данные при определенном анализе могут потенциально привести к деанонимизации отдельных лиц.</p>
+                <p><strong>Вопросы для размышления:</strong></p>
+                <ul class="list-disc list-inside ml-4 page-text-muted">
+                    <li>Какие преимущества могут дать открытые данные о перемещениях горожан?</li>
+                    <li>Какие риски для приватности существуют, даже если данные анонимизированы?</li>
+                    <li>Как найти баланс между пользой от открытых данных и защитой частной жизни?</li>
+                    <li>Должны ли жители иметь право отказаться от сбора таких данных, даже анонимных?</li>
+                </ul>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+        
+        <section id="page-gov" class="page">
+            <h2 class="section-title">Умное Правительство <i class="fas fa-landmark-dome"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Как технологии ИИ помогают городским властям работать эффективнее, принимать взвешенные решения и быть ближе к жителям? Давай узнаем!</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                 <img src="https://images.pexels.com/photos/7709277/pexels-photo-7709277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение современного правительственного здания или зала заседаний с цифровыми элементами]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px] order-last md:order-first">
+                <div class="content-block">
+                    <h3 class="sub-section-title">Цифровая трансформация госуслуг</h3>
+                    <p class="mb-3">ИИ способен кардинально изменить взаимодействие граждан с государством, делая его проще, быстрее и прозрачнее.</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li class="page-text-muted"><strong>Электронные госуслуги:</strong> Автоматизация подачи заявлений, получения справок и документов через онлайн-порталы и мобильные приложения.</li>
+                        <li class="page-text-muted"><strong>Интеллектуальные чат-боты:</strong> Консультирование граждан 24/7 по типичным вопросам, помощь в навигации по услугам.</li>
+                        <li class="page-text-muted"><strong>Анализ обращений граждан:</strong> ИИ помогает выявлять наиболее острые проблемы и запросы, чтобы власти могли быстрее на них реагировать.</li>
+                        <li class="page-text-muted"><strong>Оптимизация бюджетных расходов:</strong> Анализ данных для более эффективного распределения средств и борьбы с коррупцией.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title">Примеры ИИ в госуправлении:</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="content-block">
+                    <h4 class="font-bold text-lg mb-2 icon-color"><i class="fas fa-chart-line mr-2"></i>Предиктивная аналитика для городского планирования</h4>
+                    <p class="text-sm page-text-muted">ИИ анализирует демографические данные, транспортные потоки, экономические показатели для прогнозирования потребностей города в инфраструктуре (школы, больницы, дороги) и своевременного принятия решений.</p>
+                </div>
+                <div class="content-block">
+                    <h4 class="font-bold text-lg mb-2 icon-color"><i class="fas fa-balance-scale-right mr-2"></i>Автоматизация юридических процессов</h4>
+                    <p class="text-sm page-text-muted">ИИ может помогать в анализе законодательства, подготовке типовых документов, выявлении несоответствий, ускоряя работу юридических отделов.</p>
+                </div>
+                <div class="content-block">
+                    <h4 class="font-bold text-lg mb-2 icon-color"><i class="fas fa-comments mr-2"></i>Системы обратной связи и вовлечения граждан</h4>
+                    <p class="text-sm page-text-muted">Платформы на базе ИИ для сбора мнений, проведения опросов и голосований по важным городским вопросам, делая управление более открытым.</p>
+                </div>
+                <div class="content-block">
+                    <h4 class="font-bold text-lg mb-2 icon-color"><i class="fas fa-shield-alt mr-2"></i>Управление чрезвычайными ситуациями</h4>
+                    <p class="text-sm page-text-muted">ИИ анализирует данные с датчиков, соцсетей, метеослужб для прогнозирования ЧС (наводнения, пожары) и координации действий спасательных служб.</p>
+                </div>
+            </div>
+            
+            <h3 class="sub-section-title">Цикл Умного Управления</h3>
+            <p class="page-text-muted mb-6">Процесс умного управления городом цикличен: сбор данных, их анализ с помощью ИИ, выработка решений, реализация этих решений и, наконец, оценка гражданами и сбор обратной связи, которая становится основой для нового цикла сбора данных.</p>
+            <div class="reflection-prompt">
+                 <h4><i class="fas fa-question-circle mr-2"></i>Вопрос на подумать:</h4>
+                 <p class="page-text-primary">Какие государственные услуги в твоем городе или стране ты бы хотел улучшить с помощью ИИ и как?</p>
+                 <textarea placeholder="Мои предложения..."></textarea>
+                 <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                 <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-transport" class="page">
+            <h2 class="section-title">Умный Транспорт <i class="fas fa-car-side"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Пробки, поиск парковки, долгое ожидание автобуса... Знакомые проблемы, правда? Давай посмотрим, как ИИ приходит на помощь, чтобы сделать наши ежедневные поездки по городу быстрее, удобнее и безопаснее.</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div class="content-block">
+                    <h3 class="sub-section-title">ИИ на дорогах: что он умеет?</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Оптимизация светофоров:</strong> ИИ анализирует трафик в реальном времени и подстраивает работу светофоров, чтобы уменьшить заторы. Больше зеленых волн!</li>
+                        <li class="page-text-muted"><strong>Предсказание пробок:</strong> Анализируя исторические данные, погоду и текущую ситуацию, ИИ может предсказывать возникновение пробок и предлагать водителям альтернативные маршруты.</li>
+                        <li class="page-text-muted"><strong>Умная парковка:</strong> Датчики и камеры помогают ИИ находить свободные парковочные места и направлять к ним водителей через мобильные приложения.</li>
+                        <li class="page-text-muted"><strong>Управление общественным транспортом:</strong> Оптимизация расписаний и маршрутов, отслеживание автобусов в реальном времени, информирование пассажиров.</li>
+                        <li class="page-text-muted"><strong>Беспилотные автомобили (автономный транспорт):</strong> ИИ — это "мозг" беспилотников, позволяющий им ориентироваться в пространстве, распознавать объекты и принимать решения на дороге.</li>
+                    </ul>
+                </div>
+                <img src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение футуристичного автомобиля или умной транспортной системы]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px]">
+            </div>
+
+            <h3 class="sub-section-title">Технологии "под капотом" умного транспорта:</h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div class="content-block"><i class="fas fa-video mr-2 icon-color"></i><strong>Компьютерное зрение:</strong> Камеры на светофорах и дронах анализируют транспортные потоки.</div>
+                <div class="content-block"><i class="fas fa-satellite-dish mr-2 icon-color"></i><strong>GPS и геолокация:</strong> Отслеживание транспорта и предоставление данных для навигации.</div>
+                <div class="content-block"><i class="fas fa-brain mr-2 icon-color"></i><strong>Машинное обучение:</strong> Алгоритмы учатся на данных для предсказания и оптимизации.</div>
+                <div class="content-block"><i class="fas fa-network-wired mr-2 icon-color"></i><strong>Сети 5G:</strong> Обеспечивают быструю передачу данных между автомобилями и инфраструктурой (V2X).</div>
+            </div>
+            
+            <h3 class="sub-section-title">Экосистема Умного Транспорта</h3>
+            <p class="page-text-muted mb-6">Умный транспорт — это не просто отдельные технологии, а целая экосистема, где автомобили, инфраструктура (дороги, светофоры), пешеходы и общественный транспорт взаимодействуют друг с другом через облачные платформы и ИИ для обеспечения безопасности и эффективности.</p>
+            <div class="reflection-prompt">
+                <h4><i class="fas fa-road mr-2"></i>Твои идеи для транспорта:</h4>
+                <p>Какие "умные" транспортные решения ты бы хотел видеть в своем городе в первую очередь и почему? Что, по-твоему, важнее: борьба с пробками, развитие общественного транспорта или что-то еще?</p>
+                <textarea placeholder="Мои мысли о транспорте будущего..."></textarea>
+                <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-energy" class="page">
+            <h2 class="section-title">Умная Энергетика <i class="fas fa-lightbulb-on"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Электричество – это жизненная сила любого современного города. В этом разделе мы узнаем, как Искусственный Интеллект помогает сделать энергоснабжение не только надежным и эффективным, но и более дружелюбным к нашей планете.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                 <img src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение умной электросети или солнечных панелей на крышах]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px] order-last md:order-first">
+                <div class="content-block">
+                    <h3 class="sub-section-title">Как ИИ "заряжает" города?</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Умные сети (Smart Grids):</strong> ИИ мониторит и управляет потоками электроэнергии в реальном времени, балансируя спрос и предложение. Это помогает предотвращать отключения и снижать потери.</li>
+                        <li class="page-text-muted"><strong>Прогнозирование потребления:</strong> Анализируя погоду, время суток, праздники и другие факторы, ИИ точно предсказывает, сколько энергии понадобится городу.</li>
+                        <li class="page-text-muted"><strong>Интеграция возобновляемых источников:</strong> Солнечные панели и ветряки производят энергию неравномерно. ИИ помогает эффективно включать их в общую сеть.</li>
+                        <li class="page-text-muted"><strong>Оптимизация энергопотребления зданий:</strong> Умные термостаты и системы управления освещением, управляемые ИИ, снижают расход энергии в домах и офисах.</li>
+                        <li class="page-text-muted"><strong>Обнаружение неисправностей:</strong> ИИ анализирует данные с датчиков на линиях электропередач и подстанциях, чтобы быстро находить и даже предсказывать поломки.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title">Преимущества умной энергетики:</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <div class="content-block text-center"><i class="fas fa-dollar-sign text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Экономия</h4><p class="text-sm">Снижение потерь энергии и затрат для потребителей.</p></div>
+                <div class="content-block text-center"><i class="fas fa-shield-check text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Надежность</h4><p class="text-sm">Меньше отключений и более стабильное снабжение.</p></div>
+                <div class="content-block text-center"><i class="fas fa-leaf text-3xl icon-color mb-2"></i><h4 class="font-bold text-lg card-text-primary">Экологичность</h4><p class="text-sm">Более эффективное использование ресурсов и поддержка "зеленой" энергии.</p></div>
+            </div>
+
+            <div class="ethical-dilemma">
+                <h4><i class="fas fa-balance-scale mr-2"></i>Этическая Задачка:</h4>
+                <p>Представь, что умная энергосеть в твоем городе предлагает жителям программу: во время пиковых нагрузок (например, жарким летним вечером, когда все включают кондиционеры) ИИ может автоматически на короткое время снижать мощность или отключать наименее важные бытовые приборы в квартирах участников программы (например, посудомойку, бойлер). За это участники получают скидку на электроэнергию. Это помогает избежать перегрузки сети и веерных отключений во всем городе, а также снижает нагрузку на электростанции.</p>
+                <p><strong>Вопросы для размышления:</strong></p>
+                <ul class="list-disc list-inside ml-4 page-text-muted">
+                    <li>Согласился бы ты на участие в такой программе? Почему?</li>
+                    <li>Какие неудобства это может доставить? Насколько они критичны?</li>
+                    <li>Справедливо ли, что кто-то экономит для всего города, а кто-то нет?</li>
+                    <li>Должен ли ИИ иметь право решать, какие приборы "менее важные"? Кто должен определять эти приоритеты?</li>
+                </ul>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-ecology" class="page">
+            <h2 class="section-title">Умная Экология <i class="fas fa-seedling"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Забота об окружающей среде – одна из ключевых задач умного города. Давай посмотрим, как Искусственный Интеллект помогает нам делать города чище, зеленее и устойчивее.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div class="content-block">
+                    <h3 class="sub-section-title">ИИ на страже природы в городе:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Мониторинг качества воздуха и воды:</strong> Сети датчиков, управляемые ИИ, в реальном времени отслеживают уровень загрязнения, выявляя источники и предупреждая жителей.</li>
+                        <li class="page-text-muted"><strong>Умное управление отходами:</strong> ИИ оптимизирует маршруты мусоровозов на основе данных о наполненности контейнеров (меньше лишних поездок, экономия топлива). Умные системы сортировки мусора.</li>
+                        <li class="page-text-muted"><strong>Оптимизация полива зеленых насаждений:</strong> ИИ анализирует погоду и влажность почвы, чтобы включать полив только тогда, когда это действительно нужно, экономя воду.</li>
+                        <li class="page-text-muted"><strong>Борьба с незаконными свалками:</strong> Анализ спутниковых снимков и данных с дронов с помощью ИИ помогает выявлять несанкционированные свалки.</li>
+                        <li class="page-text-muted"><strong>Сохранение биоразнообразия:</strong> ИИ может использоваться для мониторинга популяций городских животных и птиц, анализа их поведения и создания более благоприятных условий.</li>
+                    </ul>
+                </div>
+                 <img src="https://images.pexels.com/photos/1666067/pexels-photo-1666067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение зеленого города с элементами технологий или дрона, мониторящего лес]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px]">
+            </div>
+
+            <h3 class="sub-section-title">Пример: Умные мусорные контейнеры</h3>
+            <div class="content-block">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-trash-alt text-3xl icon-color mr-4"></i>
+                    <div>
+                        <p class="page-text-muted">Контейнеры, оснащенные датчиками уровня заполнения, передают данные в центральную систему. ИИ анализирует эту информацию и:</p>
+                        <ul class="list-disc list-inside text-sm space-y-1 page-text-muted mt-2">
+                            <li>Строит оптимальные маршруты для мусоровозов, объезжая полупустые баки.</li>
+                            <li>Прогнозирует, когда контейнеры заполнятся, для превентивного вывоза.</li>
+                            <li>Помогает выявлять районы с наибольшим образованием отходов для планирования инфраструктуры.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <h3 class="sub-section-title">Цикл Умного Управления Отходами</h3>
+             <p class="page-text-muted mb-6">Этот процесс включает сбор данных с умных контейнеров, анализ этих данных ИИ для оптимизации маршрутов мусоровозов, эффективный вывоз на центры переработки, что в итоге ведет к снижению количества свалок и более чистой городской среде.</p>
+            <div class="reflection-prompt">
+                <h4><i class="fas fa-recycle mr-2"></i>Твои эко-идеи:</h4>
+                <p>Какие 2-3 конкретных шага с использованием ИИ ты бы предложил для улучшения экологии в твоем районе или городе? Подумай о проблемах, которые тебя волнуют (например, мусор, качество воздуха, нехватка зелени).</p>
+                <textarea placeholder="Мои предложения для 'зеленого' города..."></textarea>
+                <button class="btn btn-sm mt-2 reflection-submit-btn">Отправить</button>
+                <p class="reflection-feedback text-sm mt-2 hidden"></p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-healthcare" class="page">
+            <h2 class="section-title">Умное Здравоохранение <i class="fas fa-heart-pulse"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Здоровье – это самое главное! Искусственный Интеллект открывает невероятные возможности для медицины будущего, делая ее более точной, быстрой и доступной для каждого жителя умного города.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
+                 <img src="https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение врача с планшетом, анализирующего данные, или футуристического медицинского оборудования]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[450px] order-last md:order-first">
+                <div class="content-block">
+                    <h3 class="sub-section-title">ИИ на службе здоровья:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="page-text-muted"><strong>Ранняя диагностика:</strong> ИИ анализирует медицинские изображения (рентген, МРТ, КТ) и другие данные, помогая врачам выявлять заболевания (например, рак, болезни сердца) на ранних стадиях, когда лечение наиболее эффективно.</li>
+                        <li class="page-text-muted"><strong>Персонализированная медицина:</strong> На основе генетических данных, образа жизни и истории болезни ИИ помогает подбирать индивидуальные схемы лечения и профилактики.</li>
+                        <li class="page-text-muted"><strong>Виртуальные ассистенты и телемедицина:</strong> Чат-боты для первичной консультации, удаленный мониторинг состояния пациентов с хроническими заболеваниями с помощью носимых устройств.</li>
+                        <li class="page-text-muted"><strong>Оптимизация работы больниц:</strong> ИИ помогает управлять потоками пациентов, распределять ресурсы, прогнозировать загруженность отделений.</li>
+                        <li class="page-text-muted"><strong>Разработка новых лекарств:</strong> ИИ ускоряет процесс поиска и тестирования новых лекарственных препаратов.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title">Пример: ИИ в анализе медицинских снимков</h3>
+             <div class="content-block">
+                <p class="page-text-muted">Алгоритмы глубокого обучения, натренированные на тысячах рентгеновских снимков, могут с высокой точностью обнаруживать признаки пневмонии или рака легких, часто даже те, которые человеческий глаз может пропустить. Это не заменяет врача, а служит ему мощным инструментом поддержки принятия решений.</p>
+            </div>
+            
+            <div class="ethical-dilemma">
+                <h4><i class="fas fa-user-md mr-2"></i>Этическая Задачка: Врач или ИИ?</h4>
+                <p>Представь ситуацию: ИИ-система, известная своей высокой точностью (например, 98%) в диагностике редкого заболевания по анализу симптомов и медицинских данных, ставит пациенту этот диагноз. Однако опытный врач, осмотрев пациента и изучив те же данные, сомневается в диагнозе ИИ и склоняется к другому, более распространенному заболеванию, которое требует иного лечения.</p>
+                <p><strong>Вопросы для размышления:</strong></p>
+                <ul class="list-disc list-inside ml-4 page-text-muted">
+                    <li>Чьему мнению следует отдать приоритет в такой ситуации? Почему?</li>
+                    <li>Какие риски связаны с доверием только ИИ? А только врачу?</li>
+                    <li>Как можно комбинировать сильные стороны ИИ и человеческого опыта в медицине?</li>
+                    <li>Кто несет ответственность, если будет выбран неверный диагноз и лечение?</li>
+                </ul>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-examples" class="page">
+            <h2 class="section-title">Примеры ИИ в Городе (Разное)</h2>
+            <p class="text-lg mb-6 page-text-secondary">Помимо крупных направлений, о которых мы уже поговорили, ИИ находит применение во множестве других, порой неожиданных, сферах городской жизни, делая ее удобнее, интереснее и безопаснее. Давай рассмотрим еще несколько примеров!</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="content-block transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-3"><i class="fas fa-graduation-cap text-3xl icon-color mr-4"></i><h3 class="sub-section-title mt-0 mb-0">Умное образование</h3></div>
+                    <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение студентов с планшетами или интерактивной доски]" class="rounded-md mb-3 w-full h-40 object-cover">
+                    <p class="text-sm mb-2">ИИ для персонализированного обучения:</p>
+                    <ul class="list-disc list-inside text-sm space-y-1"><li class="page-text-muted">Адаптивные учебные платформы, подстраивающиеся под темп и уровень ученика.</li><li class="page-text-muted">Автоматическая проверка заданий и предоставление обратной связи.</li><li class="page-text-muted">Рекомендательные системы для выбора курсов и образовательных траекторий.</li></ul>
+                </div>
+                 <div class="content-block transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-3"><i class="fas fa-store text-3xl icon-color mr-4"></i><h3 class="sub-section-title mt-0 mb-0">Умная торговля</h3></div>
+                    <img src="https://images.pexels.com/photos/5632397/pexels-photo-5632397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение современного магазина с технологиями самообслуживания]" class="rounded-md mb-3 w-full h-40 object-cover">
+                    <p class="text-sm mb-2">ИИ в ритейле для лучшего клиентского опыта:</p>
+                    <ul class="list-disc list-inside text-sm space-y-1"><li class="page-text-muted">Персонализированные рекомендации товаров.</li><li class="page-text-muted">Чат-боты для поддержки клиентов.</li><li class="page-text-muted">Оптимизация логистики и управления запасами.</li><li class="page-text-muted">Магазины без кассиров (self-checkout).</li></ul>
+                </div>
+                 <div class="content-block transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-3"><i class="fas fa-handshake-angle text-3xl icon-color mr-4"></i><h3 class="sub-section-title mt-0 mb-0">Помощь людям с ОВЗ</h3></div>
+                    <img src="https://images.pexels.com/photos/7710081/pexels-photo-7710081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение человека, использующего вспомогательные технологии]" class="rounded-md mb-3 w-full h-40 object-cover">
+                    <p class="text-sm mb-2">ИИ для создания инклюзивной среды:</p>
+                    <ul class="list-disc list-inside text-sm space-y-1"><li class="page-text-muted">Системы навигации для слабовидящих.</li><li class="page-text-muted">Распознавание речи и сурдоперевод.</li><li class="page-text-muted">Умные протезы и экзоскелеты.</li></ul>
+                </div>
+            </div>
+            <div class="mt-8 p-6 rounded-lg interactive-prompt-bg border-interactive-prompt">
+                <h3 class="text-xl font-semibold interactive-prompt-text mb-3"><i class="fas fa-lightbulb mr-2"></i>А что еще?</h3>
+                <p class="page-text-primary mb-4">В каких еще сферах городской жизни, по-твоему, ИИ мог бы принести пользу? Придумай 1-2 примера.</p>
+                <textarea placeholder="Мои идеи применения ИИ..."></textarea>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+        
+        <section id="page-cities-reality-fantasy" class="page">
+            <h2 class="section-title">Города: Реальность и Фантазия <i class="fas fa-map-marked-alt"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Мы уже видели, как ИИ меняет реальные города. А теперь давай немного пофантазируем и представим, какими "умными" (или не очень) могли бы быть города из книг, фильмов или даже песен!</p>
+
+            <h3 class="sub-section-title">Города-лидеры в "умных" технологиях (Реальность):</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="content-block"><img src="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Фото Сингапура]" class="rounded-md mb-3 w-full h-48 object-cover"><h4 class="font-bold text-xl icon-color">Сингапур</h4><p class="text-sm page-text-muted">Известен своей инициативой "Smart Nation". Активно использует ИИ для транспорта, ЖКХ и безопасности. Пример: система автономных шаттлов и умное управление водными ресурсами.</p></div>
+                <div class="content-block"><img src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Фото Барселоны]" class="rounded-md mb-3 w-full h-48 object-cover"><h4 class="font-bold text-xl icon-color">Барселона, Испания</h4><p class="text-sm page-text-muted">Фокусируется на IoT для сбора данных. Умное освещение, парковки, управление отходами. Проект Sentilo – платформа для сбора данных с датчиков по всему городу.</p></div>
+                <div class="content-block"><img src="https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Фото Сеула или Сонгдо]" class="rounded-md mb-3 w-full h-48 object-cover"><h4 class="font-bold text-xl icon-color">Сонгдо, Южная Корея</h4><p class="text-sm page-text-muted">Построен "с нуля" как умный город. Интегрированные системы управления, пневматическая система сбора мусора, повсеместный доступ к информации.</p></div>
+            </div>
+
+            <h3 class="sub-section-title">А если пофантазировать? (Фантазия):</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="content-block border-l-purple-500">
+                    <img src="https://placehold.co/600x350/2d033b/e040fb?text=Мордор:+Всевидящий+ИИ&font=inter" alt="[Изображение Мордора с технологическими элементами]" class="rounded-md mb-3 w-full h-48 object-cover">
+                    <h4 class="font-bold text-xl text-purple-400">Мордор, Средиземье</h4>
+                    <p class="text-sm page-text-muted"><strong>"Умные" технологии:</strong> Сеть палантиров с ИИ-анализом для тотального надзора ("Большой Брат Саурон следит за тобой!"). Оптимизированные маршруты для армий орков с помощью ИИ. Система управления климатом для поддержания вечного мрака (очень энергозатратно!).</p>
+                    <p class="text-sm page-text-muted mt-1"><strong>Цель:</strong> Максимальная эффективность в управлении Тьмой и подавлении инакомыслия. Комфорт жителей (орков) — второстепенен.</p>
+                </div>
+                <div class="content-block border-l-yellow-400">
+                     <img src="https://placehold.co/600x350/fff8dc/ffd700?text=Страна+Лимония:+Вечное+Счастье&font=inter" alt="[Изображение Страны Лимонии с лимонными деревьями и технологиями]" class="rounded-md mb-3 w-full h-48 object-cover">
+                    <h4 class="font-bold text-xl text-yellow-300">Страна Лимония (по мотивам песен гр. "Дюна")</h4>
+                    <p class="text-sm page-text-muted mb-2"><strong>"Умные" технологии:</strong> ИИ-агрономы для выращивания идеальных лимонов круглый год. Система управления настроением граждан через ароматерапию (с преобладанием цитрусовых нот, разумеется) и персонализированные плейлисты (только хиты "Дюны" и ремиксы на них!). Роботы-помощники, разносящие лимонад, канапе с лимонным джемом и хорошее настроение. Беспилотные гамаки, плавно перемещающие граждан между лимонными рощами и пляжами с молочными реками.</p>
+                    <p class="text-sm page-text-muted mb-2"><strong>Экономика:</strong> Полностью автоматизированное производство лимонада, экспортируемого по всему миру. Доходы распределяются равномерно, обеспечивая всем жителям безусловный базовый доход, достаточный для покупки новой панамы и билета на концерт группы "Дюна".</p>
+                    <p class="text-sm page-text-muted"><strong>Цель:</strong> Всеобщее счастье, беззаботность, вечное лето и бесконечный запас цитрусовых. Проблемы? Какие проблемы? Если ИИ фиксирует у гражданина малейшие признаки грусти, к нему немедленно отправляется дрон с порцией витамина С и утешительной песней Виктора Рыбина.</p>
+                </div>
+                 <div class="content-block border-l-red-700">
+                     <img src="https://placehold.co/600x350/4a0e0e/ff4d4d?text=Город+Бадун:+Веселье+без+границ&font=inter" alt="[Изображение города Бадун с реками из напитков]" class="rounded-md mb-3 w-full h-48 object-cover">
+                    <h4 class="font-bold text-xl text-red-400">Город Бадун (столица Веселья)</h4>
+                    <p class="text-sm page-text-muted mb-2"><strong>"Умные" технологии:</strong> ИИ-бармены, способные смешать любой коктейль по мысленному заказу (интеграция с нейроинтерфейсами обязательна!). Система "АнтиПохмелин-3000", которая с помощью наноботов и анализа ДНК подбирает идеальное средство для восстановления после бурной ночи и доставляет его прямо к кровати дроном. Улицы с подогревом и мягким покрытием для безопасного передвижения в любом состоянии. Персональные ИИ-собутыльники, способные поддержать любую беседу и всегда готовые к "продолжению банкета".</p>
+                    <p class="text-sm page-text-muted mb-2"><strong>Инфраструктура:</strong> Реки из пива и озера из водки (с автоматической системой фильтрации и поддержания нужной температуры). Фонтаны с шампанским по праздникам (а праздник здесь каждый день!). Общественный транспорт в виде гигантских пивных бочек на автопилоте. Вместо такси – дружелюбные медведи с ИИ-навигаторами (побочный эффект генетических экспериментов местного НИИ).</p>
+                    <p class="text-sm page-text-muted"><strong>Цель:</strong> Нескончаемое веселье, отсутствие похмелья и полная свобода самовыражения. Работа? Только если это весело! Главный закон города: "Не мешай веселиться другим, если только твое веселье не заразно!".</p>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title">Вызовы и сложности на пути к "умному" будущему (Общие для всех):</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="content-block border-l-red-500"><h4 class="font-semibold text-red-400 text-lg mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Технологические и финансовые барьеры</h4><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Высокая стоимость внедрения технологий.</li><li>Необходимость в сложной инфраструктуре.</li><li>Проблемы совместимости разных систем.</li></ul></div>
+                <div class="content-block border-l-yellow-500"><h4 class="font-semibold text-yellow-400 text-lg mb-2"><i class="fas fa-lock mr-2"></i>Приватность данных и безопасность</h4><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Сбор огромного количества личных данных.</li><li>Риски утечек и кибератак.</li><li>Необходимость в надежной защите информации.</li></ul></div>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-ethics" class="page">
+            <h2 class="section-title">Этика и Безопасность в Умном Городе <i class="fas fa-balance-scale-left"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Технологии — это круто, но важно помнить об ответственности. Умный город должен быть не только эффективным, но и справедливым, и безопасным для всех.</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="content-block border-l-red-500"><h3 class="sub-section-title text-red-400"><i class="fas fa-user-secret mr-2"></i>Приватность данных</h3><p class="mb-2 page-text-muted">Умные города собирают ОЧЕНЬ много данных о жителях: где мы бываем, что покупаем, как передвигаемся. Важно:</p><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Кто имеет доступ к этим данным?</li><li>Как они защищены от утечек и взлома?</li><li>Используются ли данные анонимно?</li><li>Можем ли мы контролировать свои данные?</li></ul><img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение замка или щита, символизирующего защиту данных]" class="rounded-md mt-3 w-full h-40 object-cover"></div>
+                <div class="content-block border-l-orange-500"><h3 class="sub-section-title text-orange-400"><i class="fas fa-robot mr-2"></i>Алгоритмическая предвзятость</h3><p class="mb-2 page-text-muted">ИИ учится на данных. Если данные отражают существующие в обществе предрассудки (например, по расе, полу, доходу), то ИИ может их усилить.</p><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Может ли ИИ-система дискриминировать определенные группы людей? (Например, при найме на работу или в работе полиции).</li><li>Как обеспечить справедливость и прозрачность алгоритмов?</li></ul><img src="https://placehold.co/600x300/112240/FFA500?text=ИИ+и+весы+правосудия&font=inter" alt="[Изображение робота и весов правосудия, символизирующее предвзятость]" class="rounded-md mt-3 w-full h-40 object-cover"></div>
+                <div class="content-block border-l-yellow-500"><h3 class="sub-section-title text-yellow-400"><i class="fas fa-shield-virus mr-2"></i>Кибербезопасность</h3><p class="mb-2 page-text-muted">Чем больше систем подключено к сети, тем больше уязвимостей для хакеров.</p><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Что если взломают систему управления транспортом или электросетью?</li><li>Как защитить критически важную инфраструктуру города?</li><li>Нужна постоянная бдительность и обновление систем защиты.</li></ul></div>
+                <div class="content-block border-l-sky-500"><h3 class="sub-section-title text-sky-400"><i class="fas fa-users mr-2"></i>Цифровое неравенство</h3><p class="mb-2 page-text-muted">Не все имеют равный доступ к технологиям и цифровым навыкам.</p><ul class="list-disc list-inside text-sm space-y-1 page-text-muted"><li>Как сделать так, чтобы преимуществами умного города могли пользоваться все, а не только "продвинутые" пользователи?</li><li>Важность обучения и доступности технологий для всех слоев населения.</li></ul></div>
+            </div>
+            <div class="ethical-dilemma">
+                <h4><i class="fas fa-comments mr-2"></i>Уголок для дебатов (и еще одна задачка):</h4>
+                <p class="font-bold page-text-primary mb-1">Тема 1: Использование ИИ для распознавания лиц в общественных местах.</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-4"><div><h4 class="text-lg text-green-400">Аргументы "ЗА":</h4><ul class="list-disc list-inside text-sm page-text-muted"><li>Повышение безопасности, помощь в поиске преступников.</li><li>Быстрая идентификация в экстренных ситуациях.</li></ul></div><div><h4 class="text-lg text-red-400">Аргументы "ПРОТИВ":</h4><ul class="list-disc list-inside text-sm page-text-muted"><li>Нарушение права на частную жизнь, постоянная слежка.</li><li>Риск ошибок и ложных срабатываний.</li><li>Возможность злоупотреблений со стороны властей.</li></ul></div></div>
+                <hr class="my-4 border-gray-500/50">
+                <p class="font-bold page-text-primary mb-1">Тема 2: Автономные автомобили и "проблема вагонетки".</p>
+                <p class="page-text-muted">Беспилотный автомобиль попадает в ситуацию, где авария неизбежна. У него есть два варианта: <br>1. Свернуть и врезаться в препятствие, что приведет к травме или гибели пассажира. <br>2. Продолжить движение прямо, что приведет к наезду на пешехода (или нескольких), который внезапно выбежал на дорогу.</p>
+                 <p class="page-text-muted mt-2"><strong>Вопросы для размышления:</strong> Как должен быть запрограммирован ИИ автомобиля? Чью безопасность он должен ставить в приоритет? Кто несет ответственность за такое решение: программист, производитель, владелец автомобиля?</p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-your-role" class="page">
+            <h2 class="section-title">Твоя Роль в Будущем Умных Городов <i class="fas fa-user-astronaut"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Будущее умных городов создается уже сегодня, и ты можешь стать его активным участником! Неважно, какую профессию ты выберешь, твои знания и идеи будут ценны.</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="[Изображение группы молодых людей, работающих над проектом или обсуждающих идеи]" class="rounded-lg shadow-xl w-full h-auto object-cover max-h-[500px]">
+                <div class="content-block">
+                    <h3 class="sub-section-title">Как ты можешь подготовиться?</h3>
+                    <ul class="list-none space-y-3 page-text-muted"><li class="flex items-start"><i class="fas fa-atom text-2xl icon-color mr-3 mt-1"></i><div><strong>Изучай STEM (Science, Technology, Engineering, Mathematics):</strong> Физика, математика, информатика — основа для понимания и создания новых технологий.</div></li><li class="flex items-start"><i class="fas fa-laptop-code text-2xl icon-color mr-3 mt-1"></i><div><strong>Учись программировать:</strong> Даже базовые навыки кодинга помогут понять, как работают ИИ и другие системы. Python — отличный язык для начала!</div></li><li class="flex items-start"><i class="fas fa-lightbulb text-2xl icon-color mr-3 mt-1"></i><div><strong>Развивай критическое мышление:</strong> Анализируй информацию, задавай вопросы, не принимай всё на веру. Это поможет видеть не только плюсы, но и минусы технологий.</div></li><li class="flex items-start"><i class="fas fa-users-cog text-2xl icon-color mr-3 mt-1"></i><div><strong>Участвуй в проектах и хакатонах:</strong> Это отличный способ применить знания на практике и поработать в команде.</div></li><li class="flex items-start"><i class="fas fa-comments text-2xl icon-color mr-3 mt-1"></i><div><strong>Будь любознательным и открытым новому:</strong> Мир технологий меняется очень быстро.</div></li></ul>
+                </div>
+            </div>
+            <h3 class="sub-section-title mt-8">Профессии будущего в умных городах:</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-cogs mr-2"></i>Инженер по ИИ и робототехнике</h4><p class="text-sm page-text-secondary">Разработка и внедрение умных систем.</p></div>
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-database mr-2"></i>Аналитик данных (Data Scientist)</h4><p class="text-sm page-text-secondary">Обработка и анализ городских данных.</p></div>
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-city mr-2"></i>Специалист по городскому планированию (с уклоном в технологии)</h4><p class="text-sm page-text-secondary">Проектирование умной инфраструктуры.</p></div>
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-shield-alt mr-2"></i>Эксперт по кибербезопасности умных систем</h4><p class="text-sm page-text-secondary">Защита городских данных и инфраструктуры.</p></div>
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-balance-scale mr-2"></i>Специалист по этике ИИ</h4><p class="text-sm page-text-secondary">Обеспечение справедливого и ответственного использования ИИ.</p></div>
+                <div class="p-4 rounded-md shadow-md card-bg-secondary"><h4 class="font-bold text-lg icon-color"><i class="fas fa-recycle mr-2"></i>Эколог-технолог</h4><p class="text-sm page-text-secondary">Внедрение "зеленых" технологий в городе.</p></div>
+            </div>
+            <div class="reflection-prompt text-center">
+                 <h3 class="text-2xl font-semibold interactive-prompt-text mb-3"><i class="fas fa-pencil-ruler mr-2"></i>Творческое задание:</h3>
+                 <p class="page-text-primary mb-4 text-lg">Представь, что у тебя есть возможность внедрить ОДНО умное решение в твоем районе или школе. Что бы это было? Опиши идею, какие проблемы она решает и какие технологии ИИ могут понадобиться.</p>
+                 <textarea class="text-left" placeholder="Моя супер-идея для умного решения..."></textarea>
+                 <button class="btn mt-3" onclick="showDetailsModal('Творческое задание', '<img src=\'https://a.pinatafarm.com/640x354/09e6eb012a/kanye-stare.jpg\' alt=\'Ответ на творчество\' class=\'mx-auto rounded-md max-w-xs\'>')">Я придумал!</button>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-faq" class="page">
+            <h2 class="section-title">Часто Задаваемые Вопросы (ЧаВо) <i class="fas fa-question-circle"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Здесь собраны ответы на некоторые популярные вопросы об умных городах и ИИ.</p>
+            <div id="faq-container" class="space-y-3">
+            </div>
+            <div class="content-block mt-10" id="ask-ai-section">
+                <h3 class="sub-section-title"><i class="fas fa-robot mr-2"></i>Задать свой вопрос ИИ</h3>
+                <p class="page-text-muted mb-3">Есть вопрос, на который не нашли ответ? Спросите наш ИИ-ассистент! (Это демонстрационная функция, ИИ ответит обобщенно).</p>
+                <textarea id="user-ai-question" class="w-full min-h-[80px] p-2 rounded border reflection-prompt textarea" placeholder="Напишите ваш вопрос здесь..."></textarea>
+                <button id="submit-ai-question-btn" class="btn mt-3">Отправить вопрос ИИ</button>
+                <div id="ai-response-area" class="mt-4 hidden">
+                    <p id="ai-thinking-indicator" class="page-text-secondary mb-2"></p>
+                    <div id="ai-answer" class="p-3 rounded-md">
+                        </div>
+                </div>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+        
+        <section id="page-authors" class="page">
+            <h2 class="section-title">Авторы Проекта <i class="fas fa-users-cog"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Над этим проектом трудилась замечательная команда:</p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="content-block">
+                    <h3 class="sub-section-title"><i class="fas fa-code mr-2 icon-color"></i>Егор Маркушин</h3>
+                    <p class="page-text-primary font-semibold">Роль: Техническая часть</p>
+                    <p class="page-text-muted mt-1">Отвечал за разработку, программирование и воплощение идей в жизнь. Мастер кода и повелитель алгоритмов!</p>
+                </div>
+                <div class="content-block">
+                    <h3 class="sub-section-title"><i class="fas fa-lightbulb mr-2 icon-color"></i>Дэниель Измайлов</h3>
+                    <p class="page-text-primary font-semibold">Роль: Автор идей</p>
+                    <p class="page-text-muted mt-1">Генератор концепций, вдохновитель и главный визионер проекта. Именно его идеи легли в основу этого ресурса.</p>
+                </div>
+                <div class="content-block">
+                    <h3 class="sub-section-title"><i class="fas fa-paw mr-2 icon-color"></i>Богдан</h3>
+                    <p class="page-text-primary font-semibold">Роль: Маскот</p>
+                    <p class="page-text-muted mt-1">Душа команды и талисман удачи. Обеспечивал позитивный настрой и моральную поддержку на всех этапах разработки.</p>
+                </div>
+                <div class="content-block">
+                    <h3 class="sub-section-title"><i class="fas fa-water mr-2 icon-color"></i>Александр Чистяков</h3>
+                    <p class="page-text-primary font-semibold">Роль: Тюлень (водолаз)</p>
+                    <p class="page-text-muted mt-1">Специалист по глубоководным исследованиям и нестандартным подходам. Вносил свежие идеи и помогал погружаться в самые сложные темы.</p>
+                </div>
+            </div>
+             <p class="text-center mt-8 page-text-secondary">Спасибо за ваш интерес к нашему проекту!</p>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-glossary" class="page">
+            <h2 class="section-title">Словарь Терминов <i class="fas fa-book-open"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Ключевые понятия из мира умных городов и ИИ — простыми словами.</p>
+            <div id="glossary-container" class="space-y-3"></div>
+            <div class="page-nav-arrows"></div>
+        </section>
+
+        <section id="page-quiz" class="page">
+            <h2 class="section-title">Проверь Себя! <i class="fas fa-graduation-cap"></i></h2>
+            <p class="text-lg mb-6 page-text-secondary">Выбери уровень сложности и проверь свои знания об умных городах и ИИ. Удачи!</p>
+
+            <div class="quiz-selection-buttons text-center mb-8 space-x-2 sm:space-x-4">
+                <button data-quiz="easy" class="btn quiz-level-btn">Легкий</button>
+                <button data-quiz="medium" class="btn quiz-level-btn">Средний</button>
+                <button data-quiz="hard" class="btn quiz-level-btn">Сложный</button>
+            </div>
+
+            <div id="quiz-area-easy" class="quiz-area">
+                <div class="quiz-container mb-8">
+                    <h3 class="sub-section-title text-center">Легкий Уровень</h3>
+                    <div id="quiz-question-area-easy"></div>
+                    <button id="quiz-next-btn-easy" class="btn mt-4 hidden">Следующий вопрос</button>
+                    <div id="quiz-feedback-easy" class="mt-4"></div>
+                    <div id="quiz-results-easy" class="quiz-results hidden mt-4">
+                        <h3 class="text-2xl font-bold">Твой результат (Легкий):</h3>
+                        <p id="quiz-score-easy" class="text-xl"></p>
+                        <p id="quiz-summary-easy"></p>
+                        <button id="quiz-restart-btn-easy" class="btn btn-secondary mt-4">Пройти еще раз</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-area-medium" class="quiz-area">
+                <div class="quiz-container mb-8">
+                     <h3 class="sub-section-title text-center">Средний Уровень</h3>
+                    <div id="quiz-question-area-medium"></div>
+                    <button id="quiz-next-btn-medium" class="btn mt-4 hidden">Следующий вопрос</button>
+                    <div id="quiz-feedback-medium" class="mt-4"></div>
+                    <div id="quiz-results-medium" class="quiz-results hidden mt-4">
+                        <h3 class="text-2xl font-bold">Твой результат (Средний):</h3>
+                        <p id="quiz-score-medium" class="text-xl"></p>
+                        <p id="quiz-summary-medium"></p>
+                        <button id="quiz-restart-btn-medium" class="btn btn-secondary mt-4">Пройти еще раз</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-area-hard" class="quiz-area">
+                <div class="quiz-container mb-8">
+                    <h3 class="sub-section-title text-center">Сложный Уровень</h3>
+                    <div id="quiz-question-area-hard"></div>
+                    <button id="quiz-next-btn-hard" class="btn mt-4 hidden">Следующий вопрос</button>
+                    <div id="quiz-feedback-hard" class="mt-4"></div>
+                    <div id="quiz-results-hard" class="quiz-results hidden mt-4">
+                        <h3 class="text-2xl font-bold">Твой результат (Сложный):</h3>
+                        <p id="quiz-score-hard" class="text-xl"></p>
+                        <p id="quiz-summary-hard"></p>
+                        <button id="quiz-restart-btn-hard" class="btn btn-secondary mt-4">Пройти еще раз</button>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="sub-section-title mt-12">Опрос: Какая технология умного города тебя больше всего впечатляет?</h3>
+            <div id="poll-container" class="content-block">
+                <div class="poll-option" data-option="transport"><div class="poll-bar"></div><span class="poll-text">Умный транспорт (светофоры, беспилотники)</span><span class="poll-percentage"></span></div>
+                <div class="poll-option" data-option="energy"><div class="poll-bar"></div><span class="poll-text">Умная энергетика (экономия, возобновляемые источники)</span><span class="poll-percentage"></span></div>
+                <div class="poll-option" data-option="safety"><div class="poll-bar"></div><span class="poll-text">Общественная безопасность (умные камеры, быстрое реагирование)</span><span class="poll-percentage"></span></div>
+                <div class="poll-option" data-option="healthcare"><div class="poll-bar"></div><span class="poll-text">ИИ в здравоохранении (диагностика, персонализация)</span><span class="poll-percentage"></span></div>
+                <p id="poll-feedback" class="text-sm mt-3 hidden">Спасибо за твой голос!</p>
+            </div>
+            <div class="page-nav-arrows"></div>
+        </section>
+    </main>
+
+    <footer class="p-4 mt-auto">
+        <p class="text-sm footer-text text-center">&copy; 2025 Учебный Проект по ИИ. Создано с <i class="fas fa-heart text-red-500"></i> для любознательных.</p>
+        <div class="flex justify-center items-center text-xs footer-text-muted mt-1 space-x-4">
+             <a href="#" data-page="home" class="page-link">На главную</a>
+             <span>|</span>
+             <a href="#" data-page="authors" class="page-link">Авторы</a>
+        </div>
+    </footer>
+    
+    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[100] hidden transition-opacity duration-300 opacity-0">
+        <div id="modal-content-wrapper" class="p-6 rounded-lg shadow-xl w-full max-w-lg transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                <button id="modal-close-btn" class="text-2xl hover:opacity-75">&times;</button>
+            </div>
+            <div id="modal-text-content" class="text-base"></div> </div>
+    </div>
+
+    <script>
+        // --- Theme Switcher ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        function applyThemeToElements(isLight) {
+            const headerSubtitle = document.getElementById('header-subtitle');
+            if (headerSubtitle) headerSubtitle.style.color = isLight ? 'var(--text-light-secondary)' : 'var(--text-dark-secondary)';
+            document.querySelectorAll('.home-page-text').forEach(el => el.style.color = isLight ? 'var(--text-light-primary)' : 'var(--text-dark-primary)');
+            document.getElementById('home-subtitle-gradient').style.backgroundImage = isLight ? 'linear-gradient(to right, var(--accent-light), #38bdf8, #818cf8)' : 'linear-gradient(to right, #2dd4bf, #38bdf8, #818cf8)';
+            document.querySelectorAll('.page-text-secondary').forEach(el => el.style.color = isLight ? 'var(--text-light-secondary)' : 'var(--text-dark-secondary)');
+            document.querySelectorAll('.page-text-primary').forEach(el => el.style.color = isLight ? 'var(--text-light-primary)' : 'var(--text-dark-primary)');
+            document.querySelectorAll('.page-text-muted').forEach(el => el.style.color = isLight ? 'var(--text-light-muted)' : 'var(--text-dark-muted)');
+            document.querySelectorAll('.icon-color').forEach(el => el.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)');
+            document.querySelectorAll('.card-text-primary').forEach(el => el.style.color = isLight ? 'var(--text-light-primary)' : 'var(--text-dark-primary)');
+            
+            document.querySelectorAll('.reflection-prompt, .ethical-dilemma').forEach(el => {
+                el.style.backgroundColor = isLight ? 'color-mix(in srgb, var(--accent-light) 8%, transparent)' : 'color-mix(in srgb, var(--accent-dark) 8%, transparent)';
+                el.style.borderColor = isLight ? 'color-mix(in srgb, var(--accent-light) 30%, transparent)' : 'color-mix(in srgb, var(--accent-dark) 30%, transparent)';
+            });
+            document.querySelectorAll('.reflection-prompt h4, .ethical-dilemma h4, #ask-ai-section h3').forEach(el => {
+                 el.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)';
+            });
+             document.querySelectorAll('.reflection-prompt textarea, #user-ai-question').forEach(el => {
+                el.style.borderColor = isLight ? 'var(--border-light)' : 'var(--border-dark)';
+                el.style.backgroundColor = isLight ? 'var(--bg-light-card)' : 'var(--bg-dark-card)';
+                el.style.color = isLight ? 'var(--text-light-primary)' : 'var(--text-dark-primary)';
+            });
+            document.querySelectorAll('.reflection-feedback, #ai-thinking-indicator, #ai-answer p').forEach(el => {
+                 el.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)';
+            });
+             document.querySelectorAll('#ai-answer').forEach(el => {
+                el.style.borderColor = isLight ? 'var(--accent-light)' : 'var(--accent-dark)';
+                el.style.backgroundColor = isLight ? 'color-mix(in srgb, var(--accent-light) 5%, transparent)' : 'color-mix(in srgb, var(--accent-dark) 5%, transparent)';
+            });
+
+
+            document.querySelectorAll('.interactive-prompt-bg').forEach(el => { // For older prompt styles, if any
+                el.style.backgroundColor = isLight ? 'color-mix(in srgb, var(--accent-light) 15%, transparent)' : 'color-mix(in srgb, var(--accent-dark) 15%, transparent)';
+                el.style.borderColor = isLight ? 'var(--accent-light)' : 'var(--accent-dark)';
+            });
+            document.querySelectorAll('.interactive-prompt-text').forEach(el => el.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)');
+            document.querySelectorAll('.accent-block-bg').forEach(el => el.style.backgroundColor = isLight ? 'color-mix(in srgb, var(--accent-light) 20%, transparent)' : 'color-mix(in srgb, var(--accent-dark) 20%, transparent)');
+            document.querySelectorAll('.accent-block-border').forEach(el => el.style.borderColor = isLight ? 'var(--accent-light)' : 'var(--accent-dark)');
+            document.querySelectorAll('.accent-block-text').forEach(el => el.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)');
+            document.querySelectorAll('.card-bg-secondary').forEach(el => el.style.backgroundColor = isLight ? 'var(--border-light)' : 'var(--border-dark)');
+            document.querySelectorAll('.footer-text').forEach(el => el.style.color = isLight ? 'var(--text-light-secondary)' : 'var(--text-dark-secondary)');
+            document.querySelectorAll('.footer-text-muted').forEach(el => el.style.color = isLight ? 'var(--text-light-muted)' : 'var(--text-dark-muted)');
+            document.querySelectorAll('.mobile-menu-bg-color').forEach(el => el.style.backgroundColor = isLight ? 'var(--bg-light-card)' : 'var(--bg-dark-card)');
+            const modalContentWrapper = document.getElementById('modal-content-wrapper');
+            if (modalContentWrapper) {
+                modalContentWrapper.style.backgroundColor = isLight ? 'var(--bg-light-card)' : 'var(--bg-dark-card)';
+                modalContentWrapper.style.color = isLight ? 'var(--text-light-primary)' : 'var(--text-dark-primary)';
+            }
+            const modalTitle = document.getElementById('modal-title');
+            if (modalTitle) modalTitle.style.color = isLight ? 'var(--accent-light)' : 'var(--accent-dark)';
+        }
+
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme === "light") { body.classList.add("light-theme"); applyThemeToElements(true); }
+        else if (currentTheme === "dark") { body.classList.remove("light-theme"); applyThemeToElements(false); }
+        else if (prefersDarkScheme.matches) { body.classList.remove("light-theme"); applyThemeToElements(false); }
+        else { body.classList.add("light-theme"); applyThemeToElements(true); }
+
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            localStorage.setItem("theme", isLight ? "light" : "dark");
+            applyThemeToElements(isLight);
+        });
+
+        // --- Navigation ---
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.page-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        const orderedPageIds = [ 
+            "page-ai-basics", "page-intro", "page-ai-role", "page-buildings", "page-data",
+            "page-gov", "page-transport", "page-energy", "page-ecology", "page-healthcare",
+            "page-examples", "page-cities-reality-fantasy", "page-ethics", "page-your-role", "page-faq",
+            "page-glossary", "page-quiz" 
+        ];
+        let currentPageId = 'page-home';
+
+        function setActivePage(pageIdToShow) {
+            currentPageId = pageIdToShow;
+            pages.forEach(page => page.classList.toggle('active', page.id === pageIdToShow));
+            window.scrollTo(0, 0);
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+            updateNavArrows(pageIdToShow);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => { e.preventDefault(); setActivePage('page-' + link.dataset.page); });
+        });
+        if(mobileMenuButton) mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        function updateNavArrows(currentId) {
+            const currentIndex = orderedPageIds.indexOf(currentId);
+            document.querySelectorAll('.page-nav-arrows').forEach(container => {
+                container.innerHTML = ''; 
+
+                if (orderedPageIds.includes(currentId)) {
+                    if (currentIndex > 0) {
+                        const prevButton = document.createElement('button');
+                        prevButton.innerHTML = '&larr; Назад';
+                        prevButton.addEventListener('click', () => {
+                            setActivePage(orderedPageIds[currentIndex - 1]);
+                        });
+                        container.appendChild(prevButton);
+                    } else { 
+                        const placeholder = document.createElement('div'); 
+                        container.appendChild(placeholder);
+                    }
+
+                    if (currentIndex < orderedPageIds.length - 1) {
+                        const nextButton = document.createElement('button');
+                        nextButton.innerHTML = 'Вперед &rarr;';
+                        nextButton.addEventListener('click', () => {
+                            setActivePage(orderedPageIds[currentIndex + 1]);
+                        });
+                        container.appendChild(nextButton);
+                    } else if (currentIndex === orderedPageIds.length - 1) { 
+                        const homeButton = document.createElement('button');
+                        homeButton.innerHTML = '<i class="fas fa-home mr-2"></i>На Главную';
+                        homeButton.addEventListener('click', () => {
+                            setActivePage('page-home');
+                        });
+                        container.appendChild(homeButton);
+                    } else { 
+                         const placeholder = document.createElement('div');
+                         container.appendChild(placeholder);
+                    }
+                }
+            });
+        }
+        
+        // --- Modal Logic ---
+        const detailsModal = document.getElementById('details-modal');
+        const modalContentWrapper = document.getElementById('modal-content-wrapper');
+        const modalTitleEl = document.getElementById('modal-title');
+        const modalTextContentEl = document.getElementById('modal-text-content'); // Updated ID
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        
+        function showDetailsModal(title, contentHtml) { // Now accepts HTML content
+            modalTitleEl.textContent = title; 
+            modalTextContentEl.innerHTML = contentHtml; // Use innerHTML to render the image tag
+            detailsModal.classList.remove('hidden');
+            setTimeout(() => { detailsModal.style.opacity = '1'; modalContentWrapper.style.transform = 'scale(1)'; }, 10);
+        }
+        function closeModal() {
+            detailsModal.style.opacity = '0'; modalContentWrapper.style.transform = 'scale(0.95)';
+            setTimeout(() => detailsModal.classList.add('hidden'), 300);
+        }
+        if(modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+        if(detailsModal) detailsModal.addEventListener('click', (event) => { if (event.target === detailsModal) closeModal(); });
+
+        // --- Quiz Logic ---
+        const quizzes = {
+            easy: {
+                questions: [
+                    { question: "Что такое ИИ (простыми словами)?", options: ["Робот-помощник", "Очень сложная программа", "Способность компьютеров выполнять 'человеческие' задачи", "Интернет"], answer: "Способность компьютеров выполнять 'человеческие' задачи" },
+                    { question: "Какая основная цель умного города?", options: ["Построить больше небоскребов", "Улучшить жизнь жителей с помощью технологий", "Заменить людей роботами", "Сэкономить на электричестве"], answer: "Улучшить жизнь жителей с помощью технологий" },
+                    { question: "Пример технологии ИИ в умном городе:", options: ["Асфальтирование дорог", "Умные светофоры", "Посадка деревьев", "Строительство школ"], answer: "Умные светофоры" }
+                ],
+                elements: {
+                    area: document.getElementById('quiz-area-easy'),
+                    questionArea: document.getElementById('quiz-question-area-easy'),
+                    nextBtn: document.getElementById('quiz-next-btn-easy'),
+                    feedback: document.getElementById('quiz-feedback-easy'),
+                    results: document.getElementById('quiz-results-easy'),
+                    score: document.getElementById('quiz-score-easy'),
+                    summary: document.getElementById('quiz-summary-easy'),
+                    restartBtn: document.getElementById('quiz-restart-btn-easy')
+                }
+            },
+            medium: {
+                questions: [ 
+                    { question: "Что из перечисленного НЕ является ключевой характеристикой умного города?", options: ["Связанность", "Высокая стоимость жизни", "Устойчивость", "Эффективность"], answer: "Высокая стоимость жизни" },
+                    { question: "Какой из этих видов машинного обучения требует размеченных данных (с 'правильными ответами')?", options: ["Обучение с учителем", "Обучение без учителя", "Обучение с подкреплением"], answer: "Обучение с учителем"},
+                    { question: "Какой город известен своей инициативой 'Smart Nation'?", options: ["Барселона", "Сонгдо", "Сингапур", "Токио"], answer: "Сингапур" },
+                    { question: "Что такое 'алгоритмическая предвзятость' в контексте ИИ?", options: ["Когда ИИ работает слишком быстро", "Когда ИИ ошибается из-за нехватки данных", "Когда ИИ воспроизводит или усиливает существующие в обществе предрассудки", "Когда ИИ требует слишком много энергии"], answer: "Когда ИИ воспроизводит или усиливает существующие в обществе предрассудки" },
+                    { question: "Какая технология ИИ используется для анализа изображений и видео (например, для контроля трафика)?", options: ["Обработка естественного языка (NLP)", "Машинное обучение (ML)", "Компьютерное зрение (Computer Vision)", "Глубокое обучение (Deep Learning)"], answer: "Компьютерное зрение (Computer Vision)" }
+                ],
+                 elements: {
+                    area: document.getElementById('quiz-area-medium'),
+                    questionArea: document.getElementById('quiz-question-area-medium'),
+                    nextBtn: document.getElementById('quiz-next-btn-medium'),
+                    feedback: document.getElementById('quiz-feedback-medium'),
+                    results: document.getElementById('quiz-results-medium'),
+                    score: document.getElementById('quiz-score-medium'),
+                    summary: document.getElementById('quiz-summary-medium'),
+                    restartBtn: document.getElementById('quiz-restart-btn-medium')
+                }
+            },
+            hard: {
+                questions: [
+                    { question: "Какая технология является основой для взаимодействия 'автомобиль-инфраструктура' (V2X) в умном транспорте?", options: ["Bluetooth", "Wi-Fi", "Li-Fi", "5G"], answer: "5G" },
+                    { question: "В чем заключается 'проблема вагонетки' применительно к беспилотным автомобилям?", options: ["Автомобиль не может найти парковку", "Автомобиль должен выбрать между двумя плохими исходами в аварийной ситуации", "Аккумулятор автомобиля разрядился", "Программное обеспечение автомобиля устарело"], answer: "Автомобиль должен выбрать между двумя плохими исходами в аварийной ситуации" },
+                    { question: "Что такое 'цифровой двойник' города?", options: ["Резервная копия всех данных города", "Виртуальная 3D-модель города для симуляций и анализа", "Робот-мэр", "Специальное приложение для туристов"], answer: "Виртуальная 3D-модель города для симуляций и анализа" },
+                    { question: "Какая из перечисленных этических проблем НЕ является первоочередной при внедрении ИИ в здравоохранении?", options: ["Приватность медицинских данных", "Возможная дискриминация пациентов из-за предвзятости алгоритмов", "Ответственность за врачебные ошибки ИИ", "Слишком высокая стоимость ИИ-систем для больниц"], answer: "Слишком высокая стоимость ИИ-систем для больниц" }, 
+                    { question: "Обучение с подкреплением (Reinforcement Learning) наиболее эффективно для задач, где:", options: ["Есть большой набор размеченных данных", "Нужно найти скрытые закономерности в неразмеченных данных", "Агент должен научиться принимать последовательность решений в среде для достижения цели", "Требуется очень точное распознавание образов"], answer: "Агент должен научиться принимать последовательность решений в среде для достижения цели"},
+                    { question: "Что такое 'Open Data' в контексте умного города?", options: ["Данные, доступные только правительству", "Данные, которые можно купить", "Публично доступные данные, которые могут быть свободно использованы, изменены и распространены кем угодно", "Данные, защищенные паролем"], answer: "Публично доступные данные, которые могут быть свободно использованы, изменены и распространены кем угодно"}
+                ],
+                 elements: {
+                    area: document.getElementById('quiz-area-hard'),
+                    questionArea: document.getElementById('quiz-question-area-hard'),
+                    nextBtn: document.getElementById('quiz-next-btn-hard'),
+                    feedback: document.getElementById('quiz-feedback-hard'),
+                    results: document.getElementById('quiz-results-hard'),
+                    score: document.getElementById('quiz-score-hard'),
+                    summary: document.getElementById('quiz-summary-hard'),
+                    restartBtn: document.getElementById('quiz-restart-btn-hard')
+                }
+            }
+        };
+
+        let currentQuizType = null;
+        let currentQuestionIndices = { easy: 0, medium: 0, hard: 0 };
+        let scores = { easy: 0, medium: 0, hard: 0 };
+        let selectedOptionElements = { easy: null, medium: null, hard: null };
+
+        function initializeQuiz(quizType) {
+            currentQuizType = quizType;
+            const quiz = quizzes[quizType];
+            
+            document.querySelectorAll('.quiz-area').forEach(area => area.classList.remove('active'));
+            quiz.elements.area.classList.add('active');
+
+            currentQuestionIndices[quizType] = 0;
+            scores[quizType] = 0;
+            if(quiz.elements.results) quiz.elements.results.classList.add('hidden');
+            if(quiz.elements.questionArea) quiz.elements.questionArea.classList.remove('hidden'); 
+            loadQuizQuestion(quizType);
+        }
+        
+        document.querySelectorAll('.quiz-level-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const quizType = e.target.dataset.quiz;
+                initializeQuiz(quizType);
+            });
+        });
+
+        function loadQuizQuestion(quizType) {
+            const quiz = quizzes[quizType];
+            const qIndex = currentQuestionIndices[quizType];
+
+            if (!quiz.elements.questionArea) return; 
+            if (qIndex < quiz.questions.length) {
+                const q = quiz.questions[qIndex];
+                quiz.elements.questionArea.innerHTML = `<p class="quiz-question">${qIndex + 1}. ${q.question}</p>${q.options.map(opt => `<span class="quiz-option" data-answer="${opt}">${opt}</span>`).join('')}`;
+                if(quiz.elements.feedback) quiz.elements.feedback.textContent = ''; 
+                if(quiz.elements.nextBtn) quiz.elements.nextBtn.classList.add('hidden'); 
+                selectedOptionElements[quizType] = null;
+                quiz.elements.questionArea.querySelectorAll('.quiz-option').forEach(o => o.addEventListener('click', (e) => handleQuizOptionClick(e, quizType)));
+            } else {
+                showQuizResults(quizType);
+            }
+        }
+
+        function handleQuizOptionClick(event, quizType) {
+            const quiz = quizzes[quizType];
+            if (selectedOptionElements[quizType]) return; 
+            selectedOptionElements[quizType] = event.target;
+            const selectedAnswer = selectedOptionElements[quizType].dataset.answer;
+            const correctAnswer = quiz.questions[currentQuestionIndices[quizType]].answer;
+
+            quiz.elements.questionArea.querySelectorAll('.quiz-option').forEach(o => { 
+                o.removeEventListener('click', (e) => handleQuizOptionClick(e, quizType)); 
+                o.style.cursor = 'default';
+            });
+
+            if (selectedAnswer === correctAnswer) {
+                scores[quizType]++; 
+                selectedOptionElements[quizType].classList.add('correct'); 
+                if(quiz.elements.feedback) {
+                    quiz.elements.feedback.textContent = "Правильно! 👍";
+                    quiz.elements.feedback.className = `font-bold ${body.classList.contains('light-theme') ? 'text-green-600' : 'text-green-400'}`;
+                }
+            } else {
+                selectedOptionElements[quizType].classList.add('incorrect'); 
+                if(quiz.elements.feedback) {
+                    quiz.elements.feedback.textContent = `Неверно. Ответ: ${correctAnswer} 😔`;
+                    quiz.elements.feedback.className = `font-bold ${body.classList.contains('light-theme') ? 'text-red-600' : 'text-red-400'}`;
+                }
+                quiz.elements.questionArea.querySelectorAll('.quiz-option').forEach(o => { 
+                    if (o.dataset.answer === correctAnswer) o.classList.add('correct'); 
+                });
+            }
+            if(quiz.elements.nextBtn) quiz.elements.nextBtn.classList.remove('hidden');
+        }
+        
+        Object.keys(quizzes).forEach(quizType => {
+            const quiz = quizzes[quizType];
+            if(quiz.elements.nextBtn) {
+                quiz.elements.nextBtn.addEventListener('click', () => { 
+                    currentQuestionIndices[quizType]++; 
+                    loadQuizQuestion(quizType); 
+                });
+            }
+            if(quiz.elements.restartBtn) {
+                quiz.elements.restartBtn.addEventListener('click', () => { 
+                    initializeQuiz(quizType); 
+                });
+            }
+        });
+
+        function showQuizResults(quizType) {
+            const quiz = quizzes[quizType];
+            if(quiz.elements.questionArea) quiz.elements.questionArea.classList.add('hidden'); 
+            if(quiz.elements.nextBtn) quiz.elements.nextBtn.classList.add('hidden'); 
+            if(quiz.elements.feedback) quiz.elements.feedback.textContent = '';
+            if(quiz.elements.results) quiz.elements.results.classList.remove('hidden'); 
+            
+            const userScore = scores[quizType];
+            const totalQuestions = quiz.questions.length;
+            if(quiz.elements.score) quiz.elements.score.textContent = `${userScore} из ${totalQuestions}`;
+            
+            let summary = "";
+            if (userScore === totalQuestions) summary = "Отлично! Ты эксперт!";
+            else if (userScore >= totalQuestions / 2) summary = "Хороший результат! Ты многое знаешь.";
+            else summary = "Неплохо, но стоит повторить материал. Удачи в следующий раз!";
+            if(quiz.elements.summary) quiz.elements.summary.textContent = summary;
+        }
+
+
+        // --- Poll Logic ---
+        const pollOptions = document.querySelectorAll('.poll-option');
+        const pollFeedbackEl = document.getElementById('poll-feedback');
+        let pollVoted = false, pollData = { transport: 15, energy: 10, safety: 20, healthcare: 12 };
+        function updatePollDisplay() {
+            if(pollOptions.length === 0) return;
+            let totalVotes = Object.values(pollData).reduce((s, v) => s + v, 0);
+            pollOptions.forEach(opt => {
+                const key = opt.dataset.option, votes = pollData[key] || 0;
+                const perc = totalVotes > 0 ? ((votes / totalVotes) * 100).toFixed(1) : 0;
+                const bar = opt.querySelector('.poll-bar');
+                const percEl = opt.querySelector('.poll-percentage');
+                if(bar) bar.style.width = `${perc}%`;
+                if(percEl) percEl.textContent = `${perc}% (${votes})`;
+            });
+        }
+        pollOptions.forEach(opt => opt.addEventListener('click', () => {
+            if (pollVoted) { if(pollFeedbackEl) {pollFeedbackEl.textContent = "Ты уже голосовал!"; pollFeedbackEl.classList.remove('hidden');} return; }
+            pollData[opt.dataset.option]++; pollVoted = true; updatePollDisplay();
+            if(pollFeedbackEl) {pollFeedbackEl.textContent = "Спасибо за твой голос!"; pollFeedbackEl.classList.remove('hidden');}
+            pollOptions.forEach(o => o.style.cursor = 'default');
+        }));
+
+        // --- Glossary & FAQ Logic ---
+        function createInteractiveList(containerId, data) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = ''; 
+            data.forEach(item => {
+                const itemWrapper = document.createElement('div'); 
+                itemWrapper.className = 'interactive-list-item-wrapper';
+
+                const itemTitle = document.createElement('div'); 
+                itemTitle.className = 'interactive-list-item text-lg';
+                itemTitle.innerHTML = `<span>${item.term || item.question}</span> <i class="fas fa-chevron-down text-xs ml-2 transition-transform duration-300"></i>`;
+                
+                const itemContent = document.createElement('div');
+                itemContent.className = 'interactive-list-content text-sm';
+                itemContent.innerHTML = `<p class="py-2">${item.definition || item.answer}</p>`; 
+                
+                itemTitle.addEventListener('click', () => {
+                    itemContent.classList.toggle('open');
+                    itemTitle.classList.toggle('open'); 
+                });
+                itemWrapper.appendChild(itemTitle); 
+                itemWrapper.appendChild(itemContent); 
+                container.appendChild(itemWrapper);
+            });
+        }
+        const glossaryData = [
+            { term: "Искусственный Интеллект (ИИ)", definition: "Способность компьютерных систем выполнять задачи, которые обычно требуют человеческого интеллекта (например, обучение, решение проблем, распознавание образов)." },
+            { term: "Интернет Вещей (IoT)", definition: "Сеть физических устройств, транспортных средств, зданий и других предметов, оснащенных электроникой, программным обеспечением, датчиками и возможностью подключения к сети, что позволяет им собирать и обмениваться данными." },
+            { term: "Машинное обучение (ML)", definition: "Раздел ИИ, который позволяет системам автоматически учиться и улучшаться на основе опыта (данных) без явного программирования." },
+            { term: "Обучение с Учителем (Supervised Learning)", definition: "Тип машинного обучения, где алгоритм учится на размеченных данных, то есть данных, где для каждого примера уже известен 'правильный ответ'."},
+            { term: "Обучение без Учителя (Unsupervised Learning)", definition: "Тип машинного обучения, где алгоритм работает с неразмеченными данными, самостоятельно находя в них структуры, закономерности или группируя похожие объекты (кластеризация)."},
+            { term: "Обучение с Подкреплением (Reinforcement Learning)", definition: "Тип машинного обучения, где 'агент' учится принимать решения, взаимодействуя со 'средой' и получая 'награды' или 'штрафы' за свои действия, стремясь максимизировать общую награду."},
+            { term: "Алгоритм", definition: "Набор точных инструкций или правил, описывающих последовательность действий для решения определенной задачи."},
+            { term: "Метки (в ML)", definition: "'Правильные ответы' или целевые значения, которые предоставляются алгоритму обучения с учителем для каждого примера данных."},
+            { term: "Кластеризация", definition: "Задача обучения без учителя, заключающаяся в группировке объектов таким образом, чтобы объекты в одной группе (кластере) были более похожи друг на друга, чем на объекты из других групп."},
+            { term: "Агент (в RL)", definition: "Сущность в обучении с подкреплением, которая взаимодействует со средой, принимает решения и обучается."},
+            { term: "Среда (в RL)", definition: "Окружение, в котором действует и обучается агент в рамках обучения с подкреплением."},
+            { term: "Умный город (Smart City)", definition: "Город, использующий информационно-коммуникационные технологии (ИКТ) и ИИ для повышения качества жизни граждан, эффективности городских служб и устойчивого развития."},
+            { term: "Информационно-коммуникационные технологии (ИКТ)", definition: "Совокупность методов, производственных процессов и программно-технических средств, объединенных в технологическую цепочку, обеспечивающую сбор, создание, хранение, накопление, обработку, поиск, вывод, копирование, передачу и распространение информации."},
+            { term: "Цифровой мозг (города)", definition: "Метафорическое обозначение централизованной системы ИИ и связанных технологий, которые анализируют данные и координируют работу различных городских служб в умном городе."},
+            { term: "Датчики", definition: "Устройства, которые обнаруживают и измеряют физические величины (температуру, свет, движение и т.д.) и преобразуют их в сигналы, которые могут быть считаны и обработаны компьютером."},
+            { term: "Прогноз (в ИИ)", definition: "Предсказание будущих событий или значений на основе анализа исторических и текущих данных с помощью алгоритмов ИИ."},
+            { term: "Оптимальное решение", definition: "Наилучшее возможное решение задачи из множества доступных вариантов, часто найденное с помощью алгоритмов оптимизации."},
+            { term: "Глубокое обучение (Deep Learning)", definition: "Раздел машинного обучения, использующий многослойные нейронные сети для изучения сложных закономерностей в больших объемах данных."},
+            { term: "HVAC", definition: "Аббревиатура от Heating, Ventilation, and Air Conditioning (Отопление, Вентиляция и Кондиционирование воздуха) — технологии для создания и поддержания комфортных условий в помещениях."},
+            { term: "Предиктивное обслуживание", definition: "Стратегия технического обслуживания, основанная на прогнозировании отказов оборудования с помощью анализа данных с датчиков и ИИ, позволяющая проводить ремонт до возникновения поломки."},
+            { term: "Анонимизированные данные", definition: "Данные, из которых удалена или зашифрована информация, позволяющая идентифицировать конкретного человека, с целью защиты приватности."},
+            { term: "Деанонимизация", definition: "Процесс восстановления исходной, идентифицирующей информации из анонимизированных данных."},
+            { term: "Электронные госуслуги (e-Government)", definition: "Предоставление государственных услуг гражданам и организациям с использованием информационно-коммуникационных технологий, часто через онлайн-порталы."},
+            { term: "Предиктивная аналитика", definition: "Использование данных, статистических алгоритмов и методов машинного обучения для прогнозирования будущих результатов на основе исторических данных."},
+            { term: "V2X (Vehicle-to-Everything)", definition: "Технология обмена информацией между автомобилем и любым объектом, который может повлиять на него (другие автомобили, инфраструктура, пешеходы)."},
+            { term: "Автономный транспорт (беспилотные автомобили)", definition: "Транспортные средства, способные передвигаться без непосредственного участия водителя-человека, используя ИИ и различные датчики."},
+            { term: "Умные сети (Smart Grids)", definition: "Модернизированные электрические сети, использующие информационные и коммуникационные технологии для сбора информации о производстве и потреблении энергии и автоматического улучшения эффективности, надежности и устойчивости производства и распределения электроэнергии."},
+            { term: "Возобновляемые источники энергии", definition: "Источники энергии, которые естественным образом пополняются в человеческом масштабе времени, такие как солнечная энергия, энергия ветра, гидроэнергия, геотермальная энергия и биомасса."},
+            { term: "Мониторинг", definition: "Систематическое наблюдение и контроль за состоянием или процессами, часто с использованием датчиков и систем сбора данных."},
+            { term: "Биоразнообразие", definition: "Разнообразие жизни на Земле на всех ее уровнях, от генов до экосистем, и экологические и эволюционные процессы, которые его поддерживают."},
+            { term: "Телемедицина", definition: "Предоставление медицинских услуг и консультаций на расстоянии с использованием телекоммуникационных технологий."},
+            { term: "Носимые устройства (в медицине)", definition: "Электронные устройства, которые носятся на теле (например, умные часы, фитнес-трекеры) и собирают данные о физической активности, показателях здоровья и т.д."},
+            { term: "Алгоритмическая предвзятость (Bias)", definition: "Систематические и повторяющиеся ошибки в компьютерной системе, которые приводят к несправедливым результатам, таким как предоставление привилегий одной произвольной группе пользователей по сравнению с другими."},
+            { term: "Кибербезопасность", definition: "Практика защиты систем, сетей и программ от цифровых атак, направленных на доступ, изменение или уничтожение конфиденциальной информации, вымогательство денег у пользователей или нарушение нормальных бизнес-процессов."},
+            { term: "Цифровое неравенство", definition: "Разрыв между отдельными лицами, домохозяйствами, предприятиями и географическими районами на разных социально-экономических уровнях в отношении как их возможностей доступа к информационно-коммуникационным технологиям (ИКТ), так и их использования для широкого спектра деятельности."},
+            { term: "Проблема вагонетки", definition: "Мысленный эксперимент в этике и психологии, затрагивающий дилемму о том, следует ли пожертвовать одним человеком, чтобы спасти большее количество людей."}
+        ];
+        const faqData = [
+            { question: "Умный город — это город, где живут только роботы?", answer: "Нет, конечно! Умный город — это город для людей, где технологии (включая ИИ) используются, чтобы сделать жизнь жителей комфортнее, безопаснее и эффективнее. Роботы могут быть частью этого, но главная цель — улучшение качества жизни людей." },
+            { question: "Может ли ИИ захватить мир, как в фильмах?", answer: "На сегодняшний день ИИ — это инструмент, созданный и контролируемый людьми. Он хорош в выполнении конкретных задач, которым его обучили. Идея о 'суперинтеллекте', захватывающем мир, пока остается в области научной фантастики. Важно развивать ИИ ответственно и этично." },
+            { question: "Нужно ли быть программистом, чтобы жить в умном городе?", answer: "Абсолютно нет! Умный город стремится быть интуитивно понятным и доступным для всех жителей, независимо от их технических навыков. Технологии должны упрощать жизнь, а не усложнять ее." },
+            { question: "Какие данные обо мне собирает умный город?", answer: "Умные города могут собирать различные данные: о транспортных потоках, потреблении энергии, использовании госуслуг и т.д. Важно, чтобы сбор и использование этих данных были прозрачными, безопасными и соответствовали законам о защите персональных данных. Жители должны иметь право знать, какие данные собираются и как они используются." },
+            { question: "ИИ отнимет у людей работу?", answer: "ИИ действительно может автоматизировать некоторые рутинные задачи, что может привести к изменениям на рынке труда. Однако ИИ также создает новые профессии и требует специалистов для его разработки, обслуживания и управления. Важно адаптироваться и осваивать новые навыки." }
+        ];
+        createInteractiveList('glossary-container', glossaryData);
+        createInteractiveList('faq-container', faqData);
+
+        // --- Reflection Prompt Logic ---
+        document.querySelectorAll('.reflection-submit-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const promptDiv = e.target.closest('.reflection-prompt');
+                const textarea = promptDiv.querySelector('textarea');
+                const feedbackEl = promptDiv.querySelector('.reflection-feedback');
+                
+                if (textarea.value.trim() !== "") {
+                    feedbackEl.innerHTML = `<img src="https://a.pinatafarm.com/640x354/09e6eb012a/kanye-stare.jpg" alt="Спасибо!" class="mx-auto rounded-md max-w-[200px] sm:max-w-[250px]">`;
+                    feedbackEl.classList.remove('hidden');
+                    textarea.value = ""; // Clear textarea
+                    setTimeout(() => {
+                        feedbackEl.classList.add('hidden');
+                        feedbackEl.innerHTML = ''; // Clear image
+                    }, 3000);
+                } else {
+                    feedbackEl.textContent = "Пожалуйста, напишите что-нибудь.";
+                    feedbackEl.classList.remove('hidden');
+                     setTimeout(() => {
+                        feedbackEl.classList.add('hidden');
+                        feedbackEl.textContent = '';
+                    }, 3000);
+                }
+            });
+        });
+
+        // --- Ask AI in FAQ Logic ---
+        const submitAiQuestionBtn = document.getElementById('submit-ai-question-btn');
+        const userAiQuestionTextarea = document.getElementById('user-ai-question');
+        const aiResponseArea = document.getElementById('ai-response-area');
+        const aiThinkingIndicator = document.getElementById('ai-thinking-indicator');
+        const aiAnswerEl = document.getElementById('ai-answer');
+
+        if (submitAiQuestionBtn) {
+            submitAiQuestionBtn.addEventListener('click', () => {
+                const question = userAiQuestionTextarea.value.trim();
+                if (question === "") {
+                    aiThinkingIndicator.textContent = "Пожалуйста, введите ваш вопрос.";
+                    aiResponseArea.classList.remove('hidden');
+                    aiThinkingIndicator.classList.remove('hidden');
+                    aiAnswerEl.classList.add('hidden');
+                    setTimeout(() => {
+                         aiResponseArea.classList.add('hidden');
+                         aiThinkingIndicator.classList.add('hidden');
+                    }, 3000);
+                    return;
+                }
+
+                aiResponseArea.classList.remove('hidden');
+                aiThinkingIndicator.innerHTML = "ИИ обрабатывает ваш запрос... <i class='fas fa-spinner fa-spin ml-2'></i>";
+                aiThinkingIndicator.classList.remove('hidden');
+                aiAnswerEl.classList.add('hidden');
+                aiAnswerEl.innerHTML = ""; // Clear previous answer
+
+                setTimeout(() => {
+                    aiThinkingIndicator.classList.add('hidden');
+                    // Display Kanye image as AI response
+                    aiAnswerEl.innerHTML = `<img src="https://a.pinatafarm.com/640x354/09e6eb012a/kanye-stare.jpg" alt="Ответ ИИ" class="mx-auto rounded-md max-w-xs">`;
+                    aiAnswerEl.classList.remove('hidden');
+                    userAiQuestionTextarea.value = ""; // Clear the textarea
+                }, 2500);
+            });
+        }
+
+
+        // Initial setup
+        setActivePage('page-home');
+        updatePollDisplay();
+        applyThemeToElements(body.classList.contains('light-theme'));
+        console.log("Сайт обновлен (Канье в ЧаВо) и готов к работе! Строк кода: " + document.documentElement.innerHTML.split('\n').length);
+    </script>
+
+</body>
+</html>
